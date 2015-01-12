@@ -17,5 +17,5 @@ for file in $dotfiles; do
         mv -iv $destination $destination.backup
     fi
     
-    ln -sfv $destination $source
+    ln -sfv $source_path $destination
 done
