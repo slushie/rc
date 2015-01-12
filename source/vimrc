@@ -219,10 +219,10 @@ endif
 " tmux support
 " tell vim that the terminal supports titles
 " see http://stackoverflow.com/questions/23269294/how-to-set-window-title-from-vim-in-tmux-window
-if &term == "screen"
+if &term == "screen" || &term == "screen-256color"
   set t_ts=k
-endif
 
-" see http://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim
-autocmd BufEnter * let &titlestring = expand("%:t")
-set title
+  " see http://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim
+  autocmd BufEnter * let &titlestring = expand("%:t")
+  set title
+endif
