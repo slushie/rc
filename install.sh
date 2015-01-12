@@ -4,8 +4,8 @@
 dotfiles=$(cat installed.txt)
 
 for file in $dotfiles; do
-    source=source/$file
-    bootstrap_script=${source}_bootstrap.sh
+    source_path=source/$file
+    bootstrap_script=${source_path}_bootstrap.sh
     destination=$HOME/.$file
 
     if [ -e $bootstrap_script ]; then
