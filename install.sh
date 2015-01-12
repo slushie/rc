@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# install all my dotfiles
+
+dotfiles=$(cat installed.txt)
+
+for file in $dotfiles; do
+    source=source/$file
+    bootstrap_script=${source}_bootstrap.sh
+    destination=$HOME/.$file
+
+    if [[ -e $bootstrap_script ]]; then
+        source $bootstrap_script
+    fi
+
+    if [[ -e $destination ]]; then
+        echo "Making backup of existing $file"
+        mv -iv $destination $destination.backup
+    fi
+    
+    ln -sfv $source $destination
+done
