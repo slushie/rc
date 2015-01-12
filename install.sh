@@ -8,11 +8,11 @@ for file in $dotfiles; do
     bootstrap_script=${source}_bootstrap.sh
     destination=$HOME/.$file
 
-    if [[ -e $bootstrap_script ]]; then
+    if [ -e $bootstrap_script ]; then
         source $bootstrap_script
     fi
 
-    if [[ -e $destination ]]; then
+    if [ -e $destination ]; then
         echo "Making backup of existing $file"
         mv -iv $destination $destination.backup
     fi
