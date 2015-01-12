@@ -1,0 +1,2 @@
+# rc
+Manage my dotfiles
