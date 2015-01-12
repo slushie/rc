@@ -4,7 +4,7 @@
 dotfiles=$(cat dotfiles.txt)
 
 for file in $dotfiles; do
-    source_path="source/$file"
+    source_path="${PWD}/source/$file"
     bootstrap_script="${source_path}_bootstrap.sh"
     destination="${HOME}/.${file}"
 
@@ -17,5 +17,5 @@ for file in $dotfiles; do
         mv -iv $destination $destination.backup
     fi
     
-    ln -sfv $source $destination
+    ln -sfv $destination $source
 done
