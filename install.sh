@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # install all my dotfiles
 
-dotfiles=$(cat installed.txt)
+dotfiles=$(cat dotfiles.txt)
 
 for file in $dotfiles; do
-    source_path=source/$file
-    bootstrap_script=${source_path}_bootstrap.sh
-    destination=$HOME/.$file
+    source_path="source/$file"
+    bootstrap_script="${source_path}_bootstrap.sh"
+    destination="${HOME}/.${file}"
 
     if [ -e $bootstrap_script ]; then
         source $bootstrap_script
