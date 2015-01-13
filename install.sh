@@ -1,7 +1,21 @@
 #!/usr/bin/env bash
 # install all my dotfiles
 
-dotfiles=$(cat dotfiles.txt)
+manifest=dotfiles.txt
+
+if (( $# )); then
+    dotfiles="$@"
+    for file in $dotfiles; do
+        if grep -vq $file "$manifest"; then
+            echo "Adding $file to manifest file $manifest"
+            echo $file >> $manifest
+        fi
+    done
+else
+    dotfiles=$(cat "$manifest")
+fi
+
+
 source_base="${PWD}/source"
 
 make_backup () {
