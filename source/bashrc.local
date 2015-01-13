@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# this file contains local changes to .bashrc
+
+case $TERM
+screen*)
+    PS1="\[\e]0;\w\a\]$PS1"
+    PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
+    ;;
+esac
