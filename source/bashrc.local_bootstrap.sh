@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -e ~/.bashrc ] && ! grep -l '.bashrc.local' ~/.bashrc >/dev/null ; then
+if [ -e ~/.bashrc ] && grep -vq '.bashrc.local' ~/.bashrc ; then
     echo "Sourcing \`.bashrc.local\` from within ~/.bashrc"
 
     echo -e "\n# Source local bashrc"        >> ~/.bashrc
