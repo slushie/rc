@@ -2,20 +2,51 @@
 # install all my dotfiles
 
 dotfiles=$(cat dotfiles.txt)
+source_base="${PWD}/source"
+
+make_backup () {
+    file="$1"
+    destination="$2"
+    echo "Making backup of existing $file"
+    mv -iv $destination $destination.backup
+}
+
+install_symlink () {
+    src="$1"
+    dst="$2"
+    ln -sfv "$src" "$dst"
+}
 
 for file in $dotfiles; do
-    source_path="${PWD}/source/$file"
+    source_path="${source_base}/$file"
     bootstrap_script="${source_path}_bootstrap.sh"
     destination="${HOME}/.${file}"
 
-    if [ -e $bootstrap_script ]; then
+    # source a bootstrap file for configuration if available
+    if [[ -f $bootstrap_script ]]; then
         source $bootstrap_script
     fi
 
-    if [ -e $destination ]; then
-        echo "Making backup of existing $file"
-        mv -iv $destination $destination.backup
+    # if destination dotfile already exists
+    if [[ -f $destination ]]; then
+        # symlinks
+        if [[ -h $destination ]]; then
+            # check where the link points
+            link_dest=$(readlink "$destination")
+
+            # link points to some other file, make a backup
+            if [[ $link_dest != $source_path ]]; then
+                make_backup "$file" "$destination"
+
+            # link points to our file, nothing more to do
+            else
+                continue
+            fi
+        else
+            # normal files need normal backup
+            make_backup "$file" "$destination"
+        fi
     fi
     
-    ln -sfv $source_path $destination
+    install_symlink "$source_path" "$destination"
 done
