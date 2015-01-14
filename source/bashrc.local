@@ -29,7 +29,10 @@ PS1="\[\e]0;[\h] \w\a\]$PS1"
 if [[ $TERM == screen* ]]; then
     # simpler prompt, since details are already in the status
     # also set xterm title to working dir
-    PS1="\[$(tput setaf 0)\]\W\[$(tput setaf 5)\] %\[$(tput sgr0)\] "
+    prompt_color=5
+    [[ $EUID == 0 ]] && prompt_color=1
+    PS1="\[$(tput setaf 0)\]\W\[$(tput setaf $prompt_color)\] %\[$(tput sgr0)\] "
     PS1="\[\e]0;\w\a\]$PS1"
     PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
+    unset prompt_color
 fi
