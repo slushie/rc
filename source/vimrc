@@ -39,6 +39,8 @@ fun SetupVAM()
     endf
 call SetupVAM()
 
+colors desert
+
 " gui-only stuff in here
 if has("gui_running")
   set guioptions-=T
@@ -51,7 +53,6 @@ if has("gui_running")
   set bg=light
   colors solarized
 else
-  colors zellner
   set mouse=a
   set background=dark
 endif
