@@ -8,7 +8,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tmux-plugins/vim-tmux'
 Bundle 'scrooloose/nerdtree'
-Bundle 'vim-scripts/taglist.vim'
+"Bundle 'vim-scripts/taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 
 colors desert
