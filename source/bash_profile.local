@@ -17,9 +17,9 @@ alias ll="ls -lF"
 alias la="ls -A"
 alias l="ls -F"
 
-alias grep="$(which grep) --color=auto -E"
+alias grep="grep --color=auto -E"
 alias rgrep="grep -RHn"
-alias fgrep="$(which grep) -F"
+alias fgrep="grep -F"
 
 if [[ -d $HOME/bin ]]; then
     PATH=$PATH:$HOME/bin
