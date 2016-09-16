@@ -25,8 +25,21 @@ if [[ -d $HOME/bin ]]; then
     PATH=$PATH:$HOME/bin
 fi
 
+if [[ $(uname) == "Darwin" ]]; then
+    source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+    source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PS1_DESCRIBE_STYLE=branch
+fi
+
+if [[ $(type -t __git_ps1) != function ]]; then
+    function __git_ps1 {
+        echo ""
+    }
+fi
+
 # fancy color prompt and window title
-PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\]\W \[$(tput sgr0)\]\u\[$(tput setaf 7)\]\$ \[$(tput sgr0)\]"
+PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\]\W\[$(tput sgr0)\]\$(__git_ps1 "[%s]") \u\[$(tput setaf 7)\]\$ \[$(tput sgr0)\]"
 PS1="\[\e]0;[\h] \w\a\]$PS1"
 
 # set any containing tmux titles to the hostname (for nested ssh sessions)
@@ -40,7 +53,7 @@ if [[ $TERM == screen* && ! -z $TMUX ]]; then
     # also set xterm title to working dir
     prompt_color=5
     [[ $EUID == 0 ]] && prompt_color=1
-    PS1="\[$(tput setaf 0)\]\W\[$(tput setaf $prompt_color)\] %\[$(tput sgr0)\] "
+    PS1="\[$(tput setaf 0)\]\W \[$(tput setaf $prompt_color)\]%\[$(tput sgr0)\] "
     PS1="\[\e]0;\w\a\]$PS1"
     PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
     unset prompt_color
