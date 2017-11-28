@@ -10,8 +10,9 @@ Bundle 'tmux-plugins/vim-tmux'
 Bundle 'scrooloose/nerdtree'
 "Bundle 'vim-scripts/taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
 
-colors desert
+colors solarized
 
 " gui-only stuff in here
 if has("gui_running")
