@@ -87,8 +87,9 @@ cd () {
             # remove existing GOPATH/bin from PATH
             [[ -n "$GOPATH" ]] && { PATH="${PATH##$GOPATH/bin:}"; }
 
-            GOPATH=$(dirname $gopath_marker)
+            export GOPATH=$(dirname $gopath_marker)
             PATH=$GOPATH/bin:$PATH
+
             [[ -z $__silent_gopath ]] && echo "[GO] Configured GOPATH=$GOPATH"
         fi
     fi
