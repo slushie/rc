@@ -21,6 +21,9 @@ alias grep="grep --color=auto -E"
 alias rgrep="grep -RHn"
 alias fgrep="grep -F"
 
+
+export EDITOR=vim
+
 if [[ -d $HOME/bin ]]; then
     PATH=$PATH:$HOME/bin
 fi
