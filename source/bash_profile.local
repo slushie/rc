@@ -24,6 +24,8 @@ alias fgrep="grep -F"
 alias dc='docker-compose'
 alias k='kubectl'
 
+alias nerd='vim +NERDTree'
+
 export EDITOR=vim
 
 if [[ -d $HOME/bin ]]; then
