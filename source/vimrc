@@ -12,7 +12,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 
-colors solarized
+"colors solarized
 
 " gui-only stuff in here
 if has("gui_running")
