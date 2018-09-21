@@ -23,6 +23,7 @@ alias fgrep="grep -F"
 
 alias dc='docker-compose'
 alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
+alias dp='docker pull'
 alias k='kubectl'
 
 alias nerd='vim +NERDTree'
