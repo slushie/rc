@@ -22,14 +22,17 @@ alias rgrep="grep -RHn"
 alias fgrep="grep -F"
 
 alias dc='docker-compose'
+alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
 alias k='kubectl'
 
 alias nerd='vim +NERDTree'
 
+alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-f && say'"
+
 export EDITOR=vim
 
 if [[ -d $HOME/bin ]]; then
-    PATH=$PATH:$HOME/bin
+    PATH=$HOME/bin:$PATH
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
@@ -50,19 +53,19 @@ PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\
 PS1="\[\e]0;[\h] \w\a\]$PS1"
 
 # set any containing tmux titles to the hostname (for nested ssh sessions)
-if [[ $TERM != "linux" ]]; then
-    PROMPT_COMMAND='echo -ne "\033k$(hostname)\033\\"'
-fi
+#if [[ $TERM != "linux" ]]; then
+#    PROMPT_COMMAND='echo -ne "\033k$(hostname)\033\\"'
+#fi
 
 # screen/tmux specific features
-if [[ $TERM == screen* && ! -z $TMUX ]]; then
+if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" ]]; then
     # simpler prompt, since details are already in the status
     # also set xterm title to working dir
-    prompt_color=5
+    prompt_color=7
     [[ $EUID == 0 ]] && prompt_color=1
-    PS1="\[$(tput setaf 0)\]\W \[$(tput setaf $prompt_color)\]%\[$(tput sgr0)\] "
+    PS1="\[$(tput setaf 3)\]\W \[$(tput setaf $prompt_color)\]%\[$(tput sgr0)\] "
     PS1="\[\e]0;\w\a\]$PS1"
-    PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
+    [[ -n "$TMUX" ]] && PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
     unset prompt_color
 fi
 
