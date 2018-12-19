@@ -26,6 +26,8 @@ alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
 alias dp='docker pull'
 alias k='kubectl'
 
+alias metacurl='curl -k --cacert ~/.metatron/metatronClient.trust.pem --cert ~/.metatron/user.crt --key ~/.metatron/user.key'
+
 alias nerd='vim +NERDTree'
 
 alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-f && say'"
@@ -33,7 +35,7 @@ alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-f && say'"
 export EDITOR=vim
 
 if [[ -d $HOME/bin ]]; then
-    PATH=$HOME/bin:$PATH
+    PATH=$HOME/bin:$HOME/go/bin:$PATH
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
