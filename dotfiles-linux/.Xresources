@@ -1,0 +1,18 @@
+! fonts
+Xft.dpi: 144
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! urxvt
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+URxvt*secondaryScreen: true
+URxvt*secondaryScroll: false
+URxvt*font: xft:Iosevka:size=11
+URxvt*loginShell: true
+URxvt*scrollstyle: plain
+
+#include ".config/Xresources/sourcerer.Xresources"

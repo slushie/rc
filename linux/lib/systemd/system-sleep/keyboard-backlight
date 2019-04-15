@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $1 in
+	pre) ;;
+	post)
+		echo 1 > /sys/class/leds/tpacpi::kbd_backlight/brightness
+		;;
+esac

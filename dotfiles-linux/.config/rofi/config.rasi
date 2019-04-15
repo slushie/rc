@@ -1,0 +1,43 @@
+configuration {
+	width: 35;
+	lines: 12;
+	font: "Iosevka 16";
+	bw: 2;
+	padding: 15;
+	separator-style: "none";
+	hide-scrollbar: true;
+
+    // wait for enter after running terminal command
+    run-shell-command: "{terminal} -e bash -c '{cmd};echo -n [done];read'";
+
+    sidebar-mode: true;
+    combi-modi: "window,drun";
+    modi: "combi,run,calc";
+
+    display-combi:   "";
+    display-calc:    "";
+    display-window:  " ";
+    display-drun:    " \t";
+    display-run:     "";
+
+
+//!                bg,      border,    separator
+    color-window: "#C004005E, #FF2079, #E92EFB";
+//! State:         bg,      fg,        bgalt,     hlbg,    hlfg
+    color-normal: "#00000000, #e0d0f0, #5004005E, #440BD4, #e0d0f0";
+    color-active: "#00000000, #e0d0f0, #5004005E, #440BD4, #e0d0f0";
+    color-urgent: "#04005E,   #E92EFB, #04005E,   #E92EFB, #e0d0f0";
+
+/*
+
+    #B76CFD
+    #75D5FD
+    #011FFD
+    
+    #e0d0f0
+    #E92EFB
+    #FF2079
+    #440BD4
+    #04005E
+*/
+}

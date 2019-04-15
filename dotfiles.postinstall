@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ ! -e ~/.bash_profile ]] || grep -vq '.bash_profile.stow' ~/.bash_profile ; then
+    echo "Sourcing \`.bash_profile.stow\` from within ~/.bash_profile"
+    echo -e "\n# Source local bash_profile"        >> ~/.bash_profile
+    echo 'if [[ -r ~/.bash_profile.stow ]]; then'  >> ~/.bash_profile
+    echo '  source ~/.bash_profile.stow'           >> ~/.bash_profile
+    echo 'fi'                                      >> ~/.bash_profile
+fi
+
+if [[ ! -d ~/.vim/bundle/vundle ]]; then
+    git clone -c advice.detachedHead=false -b 0.9.1 https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+fi
+
+echo "Installing all Vundle bundles..."
+exec vim +BundleInstall +qa

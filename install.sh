@@ -1,66 +1,60 @@
-#!/usr/bin/env bash
-# install all my dotfiles
+#!/bin/bash
+# this is the main installation script
 
-manifest=dotfiles.txt
+install () {
+    pkg="$1"
+    target="$2"
+    bin="$3"
 
-if (( $# )); then
-    dotfiles="$@"
-    for file in $dotfiles; do
-        if grep -vq $file "$manifest"; then
-            echo "Adding $file to manifest file $manifest"
-            echo $file >> $manifest
-        fi
-    done
-else
-    dotfiles=$(cat "$manifest")
+    [[ -d "$pkg" ]] || return 1
+    if [[ -x "$pkg.preinstall" ]]; then
+        ./$pkg.preinstall "$target" || return 2
+    fi
+    $bin stow $STOW_OPTS -S --no-folding -t "$target" "$pkg"
+    if [[ -x "$pkg.postinstall" ]]; then
+        ./$pkg.postinstall "$target" && return 0
+        echo 1>&2 "ERROR: $pkg postinstall failed, rolling back."
+        $bin stow $STOW_OPTS -D --no-folding -t "$target" "$pkg"
+        return 2
+    fi
+    return 0
+}
+
+platform=$(uname | tr A-Z a-z)
+packages=(dotfiles dotfiles-$platform)
+system_packages=($platform)
+
+
+
+echo 1>&2 "NOTE: installing user packages to HOME=$HOME"
+echo -n "[${packages[*]}] press enter:"
+read
+
+# user-local packages
+for pkg in ${packages[@]}; do
+    echo 1>&2 "Installing '$pkg'... "
+    if ! install "$pkg" "$HOME"; then
+        err=$?
+        echo 1>&2 "Package $pkg had error: ERR$err"
+    else
+        echo 1>&2 "Package $pkg installed OK"
+    fi
+done
+
+echo 1>&2 "NOTE: installing system packages to root directory"
+if ! sudo -p "[sudo: ${system_packages[*]}] password for %p:" -v ; then
+    echo 1>&2 "system installation cancelled."
+    exit
 fi
 
-
-source_base="${PWD}/source"
-
-make_backup () {
-    file="$1"
-    destination="$2"
-    echo "Making backup of existing $file"
-    mv -iv $destination $destination.backup
-}
-
-install_symlink () {
-    src="$1"
-    dst="$2"
-    ln -sfv "$src" "$dst"
-}
-
-for file in $dotfiles; do
-    source_path="${source_base}/$file"
-    bootstrap_script="${source_path}_bootstrap.sh"
-    destination="${HOME}/.${file}"
-
-    # source a bootstrap file for configuration if available
-    if [[ -f $bootstrap_script ]]; then
-        source $bootstrap_script
+for pkg in ${system_packages[@]}; do
+    echo 1>&2 "Installing '$pkg'... "
+    if ! install "$pkg" "/" sudo; then
+        err=$?
+        echo 1>&2 "Package $pkg had error: ERR$err"
+    else
+        echo 1>&2 "Package $pkg installed OK"
     fi
-
-    # if destination dotfile already exists
-    if [[ -f $destination ]]; then
-        # symlinks
-        if [[ -h $destination ]]; then
-            # check where the link points
-            link_dest=$(readlink "$destination")
-
-            # link points to some other file, make a backup
-            if [[ $link_dest != $source_path ]]; then
-                make_backup "$file" "$destination"
-
-            # link points to our file, nothing more to do
-            else
-                continue
-            fi
-        else
-            # normal files need normal backup
-            make_backup "$file" "$destination"
-        fi
-    fi
-    
-    install_symlink "$source_path" "$destination"
 done
+
+echo 1>&2 "Done."

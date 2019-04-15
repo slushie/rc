@@ -1,0 +1,15 @@
+{
+	"drag_text": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Iosevka",
+	"font_size": 10,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"save_on_focus_lost": true,
+	"tab_completion": false,
+	"translate_tabs_to_spaces": true,
+	"ui_scale": 1.5
+}
