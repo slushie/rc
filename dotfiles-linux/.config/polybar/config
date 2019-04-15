@@ -76,7 +76,7 @@ cursor-click = pointer
 
 [module/spotify]
 type = custom/script
-exec = python /home/josh/src/polybar-spotify/spotify_status.py -t 25 -f "%{{F#FF2079}}{play_pause}%{{F-}} {artist}: {song}" -p ","
+exec = python ~/.config/polybar/spotify_status.py -t 25 -f "%{{F#FF2079}}{play_pause}%{{F-}} {artist}: {song}" -p ","
 click-left = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 click-middle = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 click-right = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next

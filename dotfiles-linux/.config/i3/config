@@ -47,10 +47,8 @@ bindsym $mod+Shift+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 bindsym $mod+space exec rofi -show combi
-bindsym $mod+Ctrl+space exec /home/josh/src/rofimoji/rofimoji.py
-
-
-bindsym $mod+n exec /home/josh/src/nmcli_rofi/nmcli_rofi
+bindsym $mod+Ctrl+space exec ~/.config/rofi/rofimoji.py
+bindsym $mod+n exec ~/.config/rofi/nmcli_rofi
 
 bindsym $mod+l exec xfce4-session-logout
 bindsym $mod+Ctrl+l exec xflock4
@@ -183,38 +181,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         # -m disk:home memory sensors cpu nic spotify pasink battery date time \
-#         status_command /home/josh/src/bumblebee-status/bumblebee-status \
-#         -m disk:home memory cpu spotify pasink battery date time \
-#         -p time.format="%l:%M %P" date.format="%a %b %e %Y" \
-#            nic.exclude=en,docker,lo,tun,veth \
-#            nic.format='{intf} {state} :: {ssid}' \
-#            memory.left-click='urxvt -e top' \
-#            cpu.left-click='urxvt -e top' \
-#            sensors.left-click='urxvt -e top' \
-#            spotify.format='{artist:.50} 🎙 {title:.20}' \
-#            spotify.pause=LEFT_CLICK \
-#            spotify.next=RIGHT_CLICK spotify.previous=MIDDLE_CLICK \
-#            home.path=/home/josh home.format="{left} {percent:-2.1f}%" \
-#            memory.format="{used} {percent:-2.1f}%" cpu.format="{:2.1f}%" \
-#         -t powerline
-
-#         font pango:Overpass Mono, Iosevka 10
-
-
-#         colors {
-#             background #3d033d
-#             statusline #42c6ff
-#             separator #6f217f
-#             focused_workspace #6f217f #ff38a8 #42c6ff
-#             inactive_workspace #6f217f #3d033d #297ca0
-#             urgent_workspace #db1143 #db1143 #42c6ff
-#         }
-# }
 
 # bar {
 #     status_command i3blocks
