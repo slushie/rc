@@ -1,0 +1,3 @@
+origin	https://github.com/fdw/rofimoji.git (fetch)
+origin	https://github.com/svenstaro/rofi-calc.git (fetch)
+origin	https://github.com/drPytho/nmcli_rofi.git (fetch)
