@@ -32,13 +32,13 @@ client = NM.Client.new(None)
 conns = client.get_connections()
 
 
-def run_rofi(alts, prompt="Settings", strip=True, force_alts=False, max_lines=20):
+def run_rofi(alts, prompt="", strip=True, force_alts=False, max_lines=20):
     """TODO: Docstring for run_rofi.
     :returns: Selected option or entered string
     """
     lines = max(min(max_lines, len(alts)), 1);
 
-    rofi = Popen(["rofi", "-i", "-dmenu", "-l", str(lines), "-p", prompt + ": "], stdout=PIPE, stdin=PIPE)
+    rofi = Popen(["rofi", "-i", "-dmenu", "-l", str(lines), "-p", prompt], stdout=PIPE, stdin=PIPE)
     selected = rofi.communicate("\n".join(alts).encode("utf-8"))[0].decode("utf-8")
 
     if strip:
