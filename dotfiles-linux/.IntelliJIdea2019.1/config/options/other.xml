@@ -1,0 +1,36 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/bin/node">
+      <version-cache version="11.14.0" last-modified="1554982284000" />
+    </local-interpreter>
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.5" />
+    <option name="fontSize" value="20" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ColorChooser.RecentColors" value="158-132-66-255" />
+    <property name="DO_NOT_SHOW_NOTIFICATION_ABOUT_EMPTY_GOPATH" value="true" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="InstalledPluginsSearchHistory" value="bash&#10;yaml&#10;file watcher" />
+    <property name="KEYMAP" value="next tab&#10;caret&#10;close tab" />
+    <property name="SettingsSearchHistory" value="file wa&#10;yaml" />
+    <property name="ShowDocumentationInToolWindow" value="true" />
+    <property name="TrendingPluginsSearchHistory" value="bash&#10;file watcher&#10;material&#10;go" />
+    <property name="ask.about.ctrl.y.shortcut" value="true" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="evlsprt3.191" value="10" />
+    <property name="file.chooser.recent.files" value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt&#10;/home/josh/go/src/stash.corp.netflix.com/jleder/parsedoc&#10;/home/josh/Work/parsedoc&#10;/usr/local/go&#10;/home/josh/Work/newt" />
+    <property name="file.gist.reindex.count" value="72" />
+    <property name="fileTypeChangedCounter" value="22" />
+    <property name="go.last.update.timestamp" value="1555633693744" />
+    <property name="go.libraries.notification.had.been.shown" value="true" />
+    <property name="installed.kotlin.plugin.version" value="1.3.21-release-IJ2019.1-3" />
+    <property name="lastTip" value="1" />
+    <property name="mt.showStatisticsAgreement" value="true" />
+    <property name="selected.color.option.type" value="TYPO" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.4.1" />
+  </component>
+</application>
