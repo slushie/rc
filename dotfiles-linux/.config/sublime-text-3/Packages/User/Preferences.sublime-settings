@@ -3,7 +3,6 @@
 	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "Iosevka",
-	"font_size": 10,
 	"ignored_packages":
 	[
 		"Markdown",

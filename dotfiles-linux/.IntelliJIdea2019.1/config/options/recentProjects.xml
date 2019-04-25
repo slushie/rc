@@ -8,6 +8,7 @@
     </option>
     <option name="openPaths">
       <list>
+        <option value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
       </list>
     </option>
@@ -43,19 +44,19 @@
               <option name="build" value="IU-191.6707.61" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1555694535248" />
-              <option name="buildTimestamp" value="1555426210376" />
+              <option name="projectOpenTimestamp" value="1556069248416" />
+              <option name="buildTimestamp" value="1555426229881" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
         <entry key="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.6183.87" />
+              <option name="build" value="IU-191.6707.61" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1555428132202" />
-              <option name="buildTimestamp" value="1553665086058" />
+              <option name="projectOpenTimestamp" value="1556069248416" />
+              <option name="buildTimestamp" value="1555426229881" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

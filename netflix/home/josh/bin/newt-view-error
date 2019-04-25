@@ -1,0 +1,38 @@
+#!/bin/bash
+
+declare -a names
+declare -a files
+count=10
+
+while read -r f; do
+    files+=("$f")
+done < <(find $HOME/.newt-cache/run-logs -maxdepth 2 -type f -name debug.log | sort -r)
+
+for index in "${!files[@]}"; do 
+    f="${files[index]}"
+    ts="$(sed -n 1p "$f" | cut -d\  -f2-)"
+    cmd="$(sed -n 2p "$f" | cut -d\  -f3-)"
+    [[ "$cmd" == *--help-man ]] && continue
+    names[$index]="$(printf "%s\t\e[1m%s\e[0m" "$ts" "$cmd")"
+done
+
+min=0
+PS3="selection: (1-$count,more,quit) "
+while true; do select cmd in "${names[@]:min:count}"; do
+    case $REPLY in
+        Q*|q*) exit ;;
+        M*|m*|"") ;;
+        *)
+            if [[ "$REPLY" -lt 1 || "$REPLY" -gt "$count" ]]; then
+                echo "invalid response"
+                continue 2
+            fi
+            n=$((min+REPLY))
+            pager=${PAGER:-less -R}
+            exec $pager "${files[n]}"
+            ;;
+    esac
+    echo ">>> more"
+    min=$((min+count))
+    continue 2
+done; done
