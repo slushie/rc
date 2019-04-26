@@ -13,12 +13,12 @@
     <location key="#Go_Modules_(vgo).0.0.2560.1440@168dpi" x="572" y="137" />
     <location key="EditFileWatcherDialog.0.0.2560.1440@168dpi" x="682" y="190" />
     <location key="search.everywhere.popup.0.0.2560.1440@168dpi" x="696" y="0" />
-    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" x="1038" y="580" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" x="1035" y="548" />
     <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1620@168dpi" x="576" y="22" />
     <location key="EnvironmentVariablesDialog.0.0.2880.1620@168dpi" x="981" y="404" />
     <location key="FileChooserDialogImpl.0.0.2880.1620@168dpi" x="1052" y="271" />
     <location key="EditFileWatcherDialog.0.0.2880.1620@168dpi" x="291" y="378" />
-    <location key="SettingsEditor.0.0.2880.1620@168dpi" x="390" y="0" />
+    <location key="SettingsEditor.0.0.2880.1620@168dpi" x="-3" y="187" />
     <location key="WELCOME_SCREEN.0.0.2880.1620@168dpi" x="1440" y="627" />
     <location key="#Plugins.0.0.2880.1620@168dpi" x="300" y="229" />
     <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2880.1620@168dpi" x="591" y="544" />
@@ -30,11 +30,12 @@
     <location key="find.popup.0.0.2560.1440@168dpi" x="730" y="137" />
     <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" x="951" y="427" />
     <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" x="869" y="454" />
-    <location key="CommitChangelistDialog2.0.0.2880.1620@168dpi" x="824" y="207" />
+    <location key="CommitChangelistDialog2.0.0.2880.1620@168dpi" x="815" y="111" />
     <location key="Vcs.Push.Dialog.0.0.2880.1620@168dpi" x="1458" y="195" />
     <location key="search.everywhere.popup.0.0.2560.1440@120dpi" x="859" y="385" />
     <location key="SettingsEditor.0.0.2560.1440@120dpi" x="619" y="274" />
     <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" x="957" y="409" />
+    <location key="find.popup.0.0.2880.1620@168dpi" x="1126" y="163" />
     <size key="FileChooserDialogImpl.0.0.2560.1440@144dpi" width="642" height="717" />
     <size key="SettingsEditor.0.0.2560.1440@144dpi" width="1528" height="1049" />
     <size key="#GOROOT.0.0.2560.1440@144dpi" width="1206" height="1007" />
@@ -46,7 +47,7 @@
     <size key="SettingsEditor.0.0.2560.1440@168dpi" width="1756" height="1328" />
     <size key="EditFileWatcherDialog.0.0.2560.1440@168dpi" width="1151" height="746" />
     <size key="search.everywhere.popup.0.0.2560.1440@168dpi" width="1177" height="1436" />
-    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" width="794" height="369" />
+    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" width="805" height="369" />
     <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1620@168dpi" width="1686" height="1130" />
     <size key="EnvironmentVariablesDialog.0.0.2880.1620@168dpi" width="908" height="754" />
     <size key="GridCell.Tab.0.left.0.0.2880.1620@168dpi" width="2012" height="598" />
@@ -55,7 +56,7 @@
     <size key="GridCell.Tab.0.bottom.0.0.2880.1620@168dpi" width="2012" height="598" />
     <size key="FileChooserDialogImpl.0.0.2880.1620@168dpi" width="748" height="829" />
     <size key="EditFileWatcherDialog.0.0.2880.1620@168dpi" width="1151" height="746" />
-    <size key="SettingsEditor.0.0.2880.1620@168dpi" width="1756" height="1217" />
+    <size key="SettingsEditor.0.0.2880.1620@168dpi" width="1766" height="1247" />
     <size key="javadoc.popup.0.0.2880.1620@168dpi" width="1054" height="719" />
     <size key="GridCell.Tab.1.left.0.0.2880.1620@168dpi" width="2012" height="598" />
     <size key="GridCell.Tab.1.center.0.0.2880.1620@168dpi" width="2012" height="598" />
@@ -73,5 +74,6 @@
     <size key="search.everywhere.popup.0.0.2560.1440@120dpi" width="840" height="1037" />
     <size key="SettingsEditor.0.0.2560.1440@120dpi" width="1312" height="897" />
     <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" width="636" height="595" />
+    <size key="find.popup.0.0.2880.1620@168dpi" width="1199" height="1314" />
   </component>
 </application>

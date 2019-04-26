@@ -4,17 +4,17 @@ declare -a names
 declare -a files
 count=10
 
-while read -r f; do
-    files+=("$f")
-done < <(find $HOME/.newt-cache/run-logs -maxdepth 2 -type f -name debug.log | sort -r)
+pattern="$@"
 
-for index in "${!files[@]}"; do 
-    f="${files[index]}"
+while read -r f; do
     ts="$(sed -n 1p "$f" | cut -d\  -f2-)"
     cmd="$(sed -n 2p "$f" | cut -d\  -f3-)"
-    [[ "$cmd" == *--help-man ]] && continue
-    names[$index]="$(printf "%s\t\e[1m%s\e[0m" "$ts" "$cmd")"
-done
+    if [[ "$cmd" == *--help-man ]] || [[ "$cmd" != *"$pattern"* ]]; then
+        continue
+    fi
+    files+=("$f")
+    names+=("$(printf "%s\t\e[1m%s\e[0m" "$ts" "$cmd")")
+done < <(find $HOME/.newt-cache/run-logs -maxdepth 2 -type f -name debug.log | sort -r)
 
 min=0
 PS3="selection: (1-$count,more,quit) "
@@ -27,8 +27,9 @@ while true; do select cmd in "${names[@]:min:count}"; do
                 echo "invalid response"
                 continue 2
             fi
-            n=$((min+REPLY))
+            n=$((min+REPLY-1))
             pager=${PAGER:-less -R}
+            echo ">>> ${files[n]}"
             exec $pager "${files[n]}"
             ;;
     esac

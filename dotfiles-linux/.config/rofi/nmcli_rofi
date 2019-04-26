@@ -236,12 +236,12 @@ def get_selection(client, aps, vpns, gsms, others):
     formated_others = [str(other) for other in others]
 
     inp = []
-    if formated_aps:
-        inp += formated_aps + [""]
     if vpns:
         inp += formated_vpns + [""]
     if gsms:
         inp += formated_gsms + [""]
+    if formated_aps:
+        inp += formated_aps + [""]
     inp += formated_others
 
 
