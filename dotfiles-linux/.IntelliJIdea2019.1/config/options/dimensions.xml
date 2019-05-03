@@ -8,7 +8,7 @@
     <location key="#Dep.0.0.2560.1440@144dpi" x="672" y="170" />
     <location key="search.everywhere.popup.0.0.2560.1440@144dpi" x="770" y="0" />
     <location key="recent.locations.popup.0.0.2560.1440@144dpi" x="750" y="285" />
-    <location key="SettingsEditor.0.0.2560.1440@168dpi" x="607" y="80" />
+    <location key="SettingsEditor.0.0.2560.1440@168dpi" x="598" y="-16" />
     <location key="FileChooserDialogImpl.0.0.2560.1440@168dpi" x="892" y="180" />
     <location key="#Go_Modules_(vgo).0.0.2560.1440@168dpi" x="572" y="137" />
     <location key="EditFileWatcherDialog.0.0.2560.1440@168dpi" x="682" y="190" />
@@ -36,6 +36,9 @@
     <location key="SettingsEditor.0.0.2560.1440@120dpi" x="619" y="274" />
     <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" x="957" y="409" />
     <location key="find.popup.0.0.2880.1620@168dpi" x="1126" y="163" />
+    <location key="run.anything.popup.0.0.2560.1440@168dpi" x="176" y="348" />
+    <location key="CommitChangelistDialog2.0.0.2560.1440@168dpi" x="1251" y="48" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440@168dpi" x="301" y="292" />
     <size key="FileChooserDialogImpl.0.0.2560.1440@144dpi" width="642" height="717" />
     <size key="SettingsEditor.0.0.2560.1440@144dpi" width="1528" height="1049" />
     <size key="#GOROOT.0.0.2560.1440@144dpi" width="1206" height="1007" />
@@ -75,5 +78,16 @@
     <size key="SettingsEditor.0.0.2560.1440@120dpi" width="1312" height="897" />
     <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" width="636" height="595" />
     <size key="find.popup.0.0.2880.1620@168dpi" width="1199" height="1314" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.1.left.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.1.center.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.1.right.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.1.bottom.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="XDebugger.FullValuePopup.0.0.2560.1440@168dpi" width="1283" height="737" />
+    <size key="CommitChangelistDialog2.0.0.2560.1440@168dpi" width="1306" height="1360" />
+    <size key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440@168dpi" width="923" height="861" />
   </component>
 </application>
