@@ -30,7 +30,7 @@ alias metacurl='curl -k --cacert ~/.metatron/metatronClient.trust.pem --cert ~/.
 
 alias nerd='vim +NERDTree'
 
-alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-f && say'"
+alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-e && say'"
 
 export EDITOR=vim
 
