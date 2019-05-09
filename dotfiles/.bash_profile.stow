@@ -53,11 +53,6 @@ fi
 PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\]\W\[$(tput sgr0)\]\$(__git_ps1 "[%s]") \u\[$(tput setaf 7)\]\$ \[$(tput sgr0)\]"
 PS1="\[\e]0;[\h] \w\a\]$PS1"
 
-# set any containing tmux titles to the hostname (for nested ssh sessions)
-#if [[ $TERM != "linux" ]]; then
-#    PROMPT_COMMAND='echo -ne "\033k$(hostname)\033\\"'
-#fi
-
 # screen/tmux specific features
 if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" ]]; then
     # simpler prompt, since details are already in the status

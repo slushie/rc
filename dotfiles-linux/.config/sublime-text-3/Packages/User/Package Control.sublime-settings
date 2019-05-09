@@ -6,8 +6,11 @@
 	"installed_packages":
 	[
 		"Color Highlight",
+		"Dockerfile Syntax Highlighting",
 		"INI",
+		"JSX",
 		"MarkdownEditing",
+		"One Dark Color Scheme",
 		"Package Control",
 		"SideBarEnhancements"
 	]

@@ -1,0 +1,10 @@
+<application>
+  <component name="GoDep">
+    <exec-paths>
+      <list>
+        <option value="$USER_HOME$/go/bin/dep" />
+        <option value="/usr/bin/dep" />
+      </list>
+    </exec-paths>
+  </component>
+</application>

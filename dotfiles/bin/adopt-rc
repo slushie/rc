@@ -1,0 +1,23 @@
+#!/bin/bash
+# adopt an existing file into a stow package
+
+pkg="$1"
+file="$(readlink -f "$2")"
+target="$3"
+
+if [[ -z "$target" ]]; then
+    if [[ "$pkg" == dotfiles* ]]; then
+        target="$HOME"
+    else
+        target="/"
+    fi
+fi
+
+set -e
+stow_dir="$(readlink -f "$(dirname "$(readlink -f "$0")")/../..")"
+target="${target%/}/"
+stowed="$stow_dir/$pkg/${file##$target}"
+
+mkdir -p "$(dirname "$stowed")"
+cp -ia "$file" "$stowed"
+stow -d "$stow_dir" -t "$target" --adopt --no-folding -S "$pkg"
