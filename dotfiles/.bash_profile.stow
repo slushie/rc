@@ -21,12 +21,16 @@ alias grep="grep --color=auto -E"
 alias rgrep="grep -RHn"
 alias fgrep="grep -F"
 
+# docker
 alias dc='docker-compose'
 alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
 alias dp='docker pull'
 alias k='kubectl'
 
+# netflix
 alias metacurl='curl -k --cacert ~/.metatron/metatronClient.trust.pem --cert ~/.metatron/user.crt --key ~/.metatron/user.key'
+alias bionicbase='dr --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/baseos/bionic'
+alias xenialbase='dr --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/engtools/xenialbase'
 
 alias nerd='vim +NERDTree'
 
