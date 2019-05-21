@@ -2,17 +2,17 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
+        <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
       </list>
     </option>
     <option name="openPaths">
       <list>
-        <option value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
+        <option value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
+    <option name="lastPath" value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
@@ -41,22 +41,22 @@
         <entry key="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.6707.61" />
+              <option name="build" value="IU-191.7141.44" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1556926800015" />
-              <option name="buildTimestamp" value="1555426248707" />
+              <option name="projectOpenTimestamp" value="1558449998180" />
+              <option name="buildTimestamp" value="1557227469979" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
         <entry key="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.6707.61" />
+              <option name="build" value="IU-191.7141.44" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1556926800015" />
-              <option name="buildTimestamp" value="1555426248707" />
+              <option name="projectOpenTimestamp" value="1558449998180" />
+              <option name="buildTimestamp" value="1557227469979" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
