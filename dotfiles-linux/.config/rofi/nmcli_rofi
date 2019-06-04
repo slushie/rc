@@ -185,6 +185,22 @@ def create_ap_actions(aps, active_ap, active_connection):
             ap_actions.append(Action(action_name, process_ap, [ap, False]))
     return ap_actions
 
+def create_eth_actions(eths, active):
+    is_eth = lambda c: NM.SETTING_WIRED_SETTING_NAME == c.get_connection_type()
+    
+    actions = []
+    for eth in eths:
+        actives = [c for c in active if is_eth(c) and c.get_id() == eth.get_id()]
+        is_active = len(actives) == 1
+        active_flag = "🔴" if is_active else "⭕"
+        name = "{} {}".format(active_flag, eth.get_id())
+        
+        if is_active:
+            actions.append(Action(name, process_vpngsm, [actives[0], not is_active]))
+        else:
+            actions.append(Action(name, process_vpngsm, [eth, not is_active]))
+    return actions
+
 
 def create_vpn_actions(vpns, active):
     active_vpns = [i for i in active if i.get_vpn()]
@@ -328,14 +344,16 @@ def run():
         ap_actions = []
 
     vpns = [i for i in conns if i.is_type(NM.SETTING_VPN_SETTING_NAME)]
-    gsms = [i for i in conns if i.is_type(NM.SETTING_GSM_SETTING_NAME)]
+    # gsms = [i for i in conns if i.is_type(NM.SETTING_GSM_SETTING_NAME)]
+    eths = [i for i in conns if i.is_type(NM.SETTING_WIRED_SETTING_NAME)]
 
     vpn_actions = create_vpn_actions(vpns, active)
-    gsm_actions = create_gsm_actions(gsms, active)
+    # gsm_actions = create_gsm_actions(gsms, active)
+    eth_actions = create_eth_actions(eths, active)
     other_actions = create_other_actions(client)
 
     sel = get_selection(client, ap_actions, vpn_actions,
-                        gsm_actions, other_actions)
+                        eth_actions, other_actions)
     sel()
 
 
