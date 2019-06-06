@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x5-10+20"
+    geometry = "500x5-10+20"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -128,7 +128,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b> [%a]\n%b"
+    format = "<i>%a</i>\n<b>%s</b>\n<span color='#E92EFB'><i>%I</i></span>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -269,10 +269,10 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = mod4+grave
+    history = mod4+Escape
 
     # Context menu.
-    context = mod4+period
+    #context = mod4+period
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

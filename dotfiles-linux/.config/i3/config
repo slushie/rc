@@ -122,6 +122,7 @@ bindsym $mod+0 workspace $ws10
 
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
+bindsym $mod+grave workspace back_and_forth
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
