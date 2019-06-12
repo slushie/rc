@@ -234,7 +234,7 @@ def get_selection(actions):
         sys.exit()
 
     action = [a for a in actions if str(a) == sel.rstrip("\n")]
-    assert len(action) == 1, "Selection was ambiguous: {}, {}".format(str(sel), str(action))
+    # assert len(action) == 1, "Selection was ambiguous: {}, {}".format(str(sel), str(action))
     return action[0]
 
 
