@@ -2,10 +2,11 @@
   <component name="RecentProjectsManager">
     <option name="recentPaths">
       <list>
-        <option value="$USER_HOME$/Work/joiner" />
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
-        <option value="$USER_HOME$/Work/picardbot" />
+        <option value="$USER_HOME$/Work/kimmy" />
         <option value="$USER_HOME$/Work/toys/joiner" />
+        <option value="$USER_HOME$/Work/picardbot" />
+        <option value="$USER_HOME$/Work/joiner" />
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/jleder/parsedoc" />
         <option value="$USER_HOME$/bin" />
       </list>
@@ -13,10 +14,9 @@
     <option name="openPaths">
       <list>
         <option value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
-        <option value="$USER_HOME$/Work/joiner" />
       </list>
     </option>
-    <option name="lastPath" value="$USER_HOME$/Work/joiner" />
+    <option name="lastPath" value="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt" />
     <option name="pid" value="" />
     <option name="additionalInfo">
       <map>
@@ -26,8 +26,19 @@
               <option name="build" value="IU-191.7141.44" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1560307015461" />
+              <option name="projectOpenTimestamp" value="1561075042566" />
               <option name="buildTimestamp" value="1557227506868" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Work/kimmy">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-191.7479.19" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1564261000039" />
+              <option name="buildTimestamp" value="1559021814301" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -59,19 +70,19 @@
               <option name="build" value="IU-191.7141.44" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1560111952775" />
-              <option name="buildTimestamp" value="1557227489669" />
+              <option name="projectOpenTimestamp" value="1562599580971" />
+              <option name="buildTimestamp" value="1557227469075" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
         <entry key="$USER_HOME$/Work/toys/joiner">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.7141.44" />
+              <option name="build" value="IU-191.7479.19" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1559756140274" />
-              <option name="buildTimestamp" value="1557227489669" />
+              <option name="projectOpenTimestamp" value="1564260903057" />
+              <option name="buildTimestamp" value="1559021814301" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
@@ -89,11 +100,11 @@
         <entry key="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.7141.44" />
+              <option name="build" value="IU-191.7479.19" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1560307015461" />
-              <option name="buildTimestamp" value="1557227506868" />
+              <option name="projectOpenTimestamp" value="1565288606913" />
+              <option name="buildTimestamp" value="1559021781270" />
             </RecentProjectMetaInfo>
           </value>
         </entry>

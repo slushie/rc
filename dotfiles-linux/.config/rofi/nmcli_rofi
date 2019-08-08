@@ -19,7 +19,7 @@ import os
 import shlex
 import sys
 from os.path import expanduser
-from subprocess import Popen, PIPE
+from subprocess import Popen, PIPE, run
 
 gi.require_version('NM', '1.0')
 from gi.repository import NM
@@ -30,6 +30,12 @@ ENC = "utf-8"
 
 client = NM.Client.new(None)
 conns = client.get_connections()
+
+VPN_SECRET = 'vpn.secrets'
+
+lastpass_cons = dict([
+    ('Corporate LAN', '2184487208149415857')
+])
 
 
 def run_rofi(alts, prompt="", strip=True, force_alts=False, max_lines=20):
@@ -150,9 +156,28 @@ def process_ap(ap, is_active):
             set_new_connection(ssid_to_utf8(ap), password)
 
 
+def lastpass_password(id):
+    cmdline = ['lpass', 'show', '--password', id]
+    proc = Popen(cmdline, stdout=PIPE, stderr=PIPE, encoding='utf-8')
+    proc.wait()
+    if proc.returncode != 0:
+        Popen(['rofi', '-e', proc.stderr.read()]).wait()
+        return None
+    return proc.stdout.read().rstrip()
+    
 def process_vpngsm(con, activate):
     if activate:
+        # id = con.get_id()
+        # if id in lastpass_cons:
+        #     pw = lastpass_password(lastpass_cons[id])
+        #     if pw is not None:
+        #         setting = con.get_setting_vpn()
+        #         setting.add_secret('password', pw)
+        #         con.add_setting(setting)
+        #         con.commit_changes(False, None)
+        #         con.dump()
         client.activate_connection_async(con)
+
     else:
         client.deactivate_connection_async(con)
 
