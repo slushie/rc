@@ -65,6 +65,7 @@
     <location key="SettingsEditor.0.0.3840.2160@168dpi" x="63" y="417" />
     <location key="run.anything.popup.0.0.3840.2160@168dpi" x="371" y="496" />
     <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" x="542" y="846" />
+    <location key="search.everywhere.popup.0.0.3440.1440@168dpi" x="269" y="0" />
     <size key="FileChooserDialogImpl.0.0.2560.1440@144dpi" width="642" height="717" />
     <size key="SettingsEditor.0.0.2560.1440@144dpi" width="1528" height="1049" />
     <size key="#GOROOT.0.0.2560.1440@144dpi" width="1206" height="1007" />
@@ -159,5 +160,6 @@
     <size key="CommitChangelistDialog2.0.0.3840.2160@168dpi" width="1295" height="1370" />
     <size key="SettingsEditor.0.0.3840.2160@168dpi" width="1784" height="1227" />
     <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" width="826" height="370" />
+    <size key="search.everywhere.popup.0.0.3440.1440@168dpi" width="1177" height="1436" />
   </component>
 </application>

@@ -1,0 +1,1 @@
+xrandr --output eDP-1 --off --output HDMI-1 --mode 3440x1440 --scale 1x1 --fb 3440x1440 --primary --right-of eDP-1
