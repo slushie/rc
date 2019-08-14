@@ -33,7 +33,7 @@
     <property name="file.chooser.recent.files" value="$USER_HOME$/Work/kimmy&#10;/home/josh/go/src&#10;/home/josh/Work/toys/joiner&#10;/home/josh/.newt-cache/run-logs/2019.04.24.14.46.37.270/debug.log&#10;/home/josh/.newt-cache/run-logs&#10;/home/josh/go/src/stash.corp.netflix.com/engtools/newt&#10;/home/josh/go/src/stash.corp.netflix.com/jleder/parsedoc&#10;/home/josh/Work/parsedoc&#10;/usr/local/go&#10;/home/josh/Work/newt" />
     <property name="file.gist.reindex.count" value="22362" />
     <property name="fileTypeChangedCounter" value="43" />
-    <property name="go.last.update.timestamp" value="1565708128542" />
+    <property name="go.last.update.timestamp" value="1565795894321" />
     <property name="go.libraries.notification.had.been.shown" value="true" />
     <property name="gotest.Splitter.Proportion" value="0.2635135" />
     <property name="ignore.power.save.mode" value="true" />

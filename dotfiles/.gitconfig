@@ -1,0 +1,9 @@
+[url "ssh://git@stash.corp.netflix.com:7999"]
+	insteadOf = https://stash.corp.netflix.com/scm
+[user]
+	email = jleder@netflix.com
+	name = Josh Leder
+[merge]
+	tool = meld
+[alias]
+    recent=for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/
