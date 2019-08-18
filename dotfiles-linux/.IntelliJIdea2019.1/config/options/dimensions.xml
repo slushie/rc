@@ -28,7 +28,7 @@
     <location key="refactoring.ChangeSignatureDialog.0.0.2880.1620@168dpi" x="562" y="230" />
     <location key="run.anything.popup.0.0.2880.1620@168dpi" x="418" y="385" />
     <location key="find.popup.0.0.2560.1440@168dpi" x="730" y="137" />
-    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" x="941" y="285" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" x="939" y="246" />
     <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" x="864" y="383" />
     <location key="CommitChangelistDialog2.0.0.2880.1620@168dpi" x="110" y="247" />
     <location key="Vcs.Push.Dialog.0.0.2880.1620@168dpi" x="1449" y="99" />
@@ -67,6 +67,7 @@
     <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" x="542" y="846" />
     <location key="search.everywhere.popup.0.0.3440.1440@168dpi" x="269" y="0" />
     <location key="VCS.ChangeListViewerDialog.0.0.3440.1440@168dpi" x="630" y="11" />
+    <location key="SettingsEditor.0.0.3440.1440@168dpi" x="135" y="57" />
     <size key="FileChooserDialogImpl.0.0.2560.1440@144dpi" width="642" height="717" />
     <size key="SettingsEditor.0.0.2560.1440@144dpi" width="1528" height="1049" />
     <size key="#GOROOT.0.0.2560.1440@144dpi" width="1206" height="1007" />
@@ -163,5 +164,6 @@
     <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" width="826" height="370" />
     <size key="search.everywhere.popup.0.0.3440.1440@168dpi" width="1177" height="1436" />
     <size key="VCS.ChangeListViewerDialog.0.0.3440.1440@168dpi" width="794" height="1320" />
+    <size key="SettingsEditor.0.0.3440.1440@168dpi" width="1784" height="1227" />
   </component>
 </application>

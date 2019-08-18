@@ -12,9 +12,16 @@
   <action id="EditorMoveToPageTop" />
   <action id="EditorMoveToPageTopWithSelection" />
   <action id="EditorSelectWord" />
+  <action id="FindNext">
+    <keyboard-shortcut first-keystroke="f3" />
+  </action>
   <action id="Forward">
     <mouse-shortcut keystroke="button5" />
     <keyboard-shortcut first-keystroke="alt close_bracket" />
+  </action>
+  <action id="GotoLine">
+    <keyboard-shortcut first-keystroke="ctrl g" />
+    <keyboard-shortcut first-keystroke="ctrl l" />
   </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="alt right" />

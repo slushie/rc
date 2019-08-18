@@ -100,11 +100,11 @@
         <entry key="$USER_HOME$/go/src/stash.corp.netflix.com/engtools/newt">
           <value>
             <RecentProjectMetaInfo>
-              <option name="build" value="IU-191.7479.19" />
+              <option name="build" value="IU-191.8026.42" />
               <option name="productionCode" value="IU" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="projectOpenTimestamp" value="1565795892359" />
-              <option name="buildTimestamp" value="1559021767269" />
+              <option name="projectOpenTimestamp" value="1565887476048" />
+              <option name="buildTimestamp" value="1564463911262" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
