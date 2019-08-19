@@ -12,10 +12,11 @@ configuration {
 
     sidebar-mode: true;
     combi-modi: "window,drun";
-    modi: "combi,run,calc";
+    //modi: "combi,run,calc";
+    modi: "combi,run";
 
     display-combi:   "";
-    display-calc:    "";
+    //display-calc:    "";
     display-window:  " ";
     display-drun:    " \t";
     display-run:     "";
