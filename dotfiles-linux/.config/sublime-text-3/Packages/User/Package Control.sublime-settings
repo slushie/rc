@@ -7,12 +7,14 @@
 	[
 		"Color Highlight",
 		"Dockerfile Syntax Highlighting",
+		"Dracula Color Scheme",
 		"INI",
 		"JSX",
 		"LSP",
 		"MarkdownEditing",
 		"One Dark Color Scheme",
 		"Package Control",
-		"SideBarEnhancements"
+		"SideBarEnhancements",
+		"TypeScript Syntax"
 	]
 }

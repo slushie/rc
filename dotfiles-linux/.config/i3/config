@@ -137,9 +137,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # volume control
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +10%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -10%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
+
+# music control
+bindsym XF86AudioPlay exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioPrevious exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym XF86AudioNext exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -187,6 +192,8 @@ bindsym $mod+r mode "resize"
 #     status_command i3blocks
 # }
 
+for_window [title="Event Tester"] floating enable
+for_window [title="win0" class="java-lang-Thread"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -196,6 +203,8 @@ for_window [window_role="GtkFileChooserDialog"] resize set 800 600
 for_window [window_role="GtkFileChooserDialog"] move position mouse
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+
+for_window [floating] border pixel 5, 
 
 focus_on_window_activation focus
 focus_follows_mouse no
@@ -209,20 +218,21 @@ for_window [class="^.*"] border pixel 1
 new_window pixel 1
 new_float pixel 4
 
-for_window [class=".*"] title_format "%title <b><small>%class</small></b>"
+for_window [class=".*"] title_format "%title <i><small>%class</small></i>"
 
-for_window [class="(?i)Slack"] workspace $ws2
-for_window [class="(?i)Firefox"] workspace $ws4
-for_window [class="(?i)Spotify"] workspace $ws5
+for_window [class="(?i)Slack"] move to workspace $ws2
+for_window [class="(?i)Firefox"] move to workspace $ws4
+for_window [class="(?i)Spotify"] move to workspace $ws5
 
 
 #exec firefox
 #exec slack
 #exec urxvt
 
+exec --no-startup-id xfce4-session
+exec nm-applet
+exec ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
-exec_always xfce4-session
-exec_always nm-applet
 
 
 # class                 border  bground text    indicator child_border
