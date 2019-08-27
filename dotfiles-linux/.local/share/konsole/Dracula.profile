@@ -1,6 +1,6 @@
 [Appearance]
 ColorScheme=Klorax.Dracula
-Font=Iosevka,13,-1,0,50,0,0,0,0,0,Light
+Font=Iosevka Light,13,-1,5,25,0,0,0,0,0,Regular
 
 [General]
 Command=/bin/bash -l
