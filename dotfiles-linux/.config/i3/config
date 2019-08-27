@@ -50,8 +50,8 @@ bindsym $mod+space exec rofi -show combi
 bindsym $mod+Ctrl+space exec ~/.config/rofi/rofimoji.py
 bindsym $mod+n exec ~/.config/rofi/nmcli_rofi
 
-bindsym $mod+l exec xfce4-session-logout
-bindsym $mod+Ctrl+l exec xflock4
+bindsym $mod+l exec qdbus org.kde.ksmserver /KSMServer logout 1 3 3
+bindsym $mod+Ctrl+l exec qdbus --system org.freedesktop.login1 /org/freedesktop/login1/session/self org.freedesktop.login1.Session.Lock
 
 # change focus
 bindsym $mod+Left focus left
@@ -151,7 +151,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'pkill xfce4-session'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'qdbus org.kde.ksmserver /KSMServer logout 0 2 3'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -225,13 +225,41 @@ for_window [class="(?i)Firefox"] move to workspace $ws4
 for_window [class="(?i)Spotify"] move to workspace $ws5
 
 
+## Plasma Integration
+# Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
+exec --no-startup-id wmctrl -c Plasma
+
+## Avoid tiling popups, dropdown windows from plasma
+# for the first time, manually resize them, i3 will remember the setting for floating windows
+for_window [class="Plasma"] floating enable, border none
+for_window [title="plasma-desktop"] floating enable, border none
+for_window [title="win7"] floating enable, border none
+for_window [class="krunner"] floating enable, border none
+for_window [class="Kmix"] floating enable, border none
+for_window [class="Klipper"] floating enable, border none
+for_window [class="Plasmoidviewer"] floating enable, border none
+
+# Don’t treat Plasma pop-ups as full-sized windows
+for_window [class="plasmashell"] floating enable
+
+# Don’t spawn an empty window for the Plasma Desktop
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+
+# Don’t let notifications and non-interactive pop-up windows steal focus
+no_focus [class="plasmashell" window_type="notification"]
+no_focus [class="plasmashell" window_type="on_screen_display"]
+
+exec --no-startup-id compton &
+
+
 #exec firefox
 #exec slack
 #exec urxvt
 
-exec --no-startup-id xfce4-session
+#exec --no-startup-id xfce4-session
+
 exec nm-applet
-exec ~/.fehbg
+exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
 
 
