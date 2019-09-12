@@ -7,3 +7,7 @@
 	tool = meld
 [alias]
     recent=for-each-ref --sort=-committerdate --format='%(color:green bold)%(HEAD)%(color:reset) %(align:width=16)%(color:bold)%(refname:short)%(color:reset)%(end) %(color:magenta)%(committerdate:local)%(color:reset) %(subject)' refs/heads/
+[core]
+	pager = less -+X -+F
+[push]
+	default = upstream

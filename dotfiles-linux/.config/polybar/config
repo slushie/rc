@@ -254,6 +254,8 @@ ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-5 = 
 
+click-right = pavucontrol-qt
+
 [module/battery]
 type = internal/battery
 battery = BAT0
