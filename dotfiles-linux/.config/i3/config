@@ -219,7 +219,7 @@ for_window [class="^.*"] border pixel 1
 new_window pixel 1
 new_float pixel 4
 
-for_window [class=".*"] title_format "%title <i><small>%class</small></i>"
+for_window [class=".*"] title_format " %title <i><small>%class</small></i>"
 
 for_window [class="(?i)Slack"] move to workspace $ws2
 for_window [class="jetbrains-idea"] move to workspace $ws3
@@ -253,7 +253,7 @@ no_focus [class="plasmashell" window_type="notification"]
 exec_always --no-startup-id compton -b
 
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
-exec --no-startup-id wmctrl -c Plasma
+# exec --no-startup-id wmctrl -c Plasma
 
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
