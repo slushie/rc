@@ -220,6 +220,7 @@ new_window pixel 1
 new_float pixel 4
 
 for_window [class=".*"] title_format " %title <i><small>%class</small></i>"
+for_window [class=i3-frame] title_format " %title <i><small>%class</small></i>"
 
 for_window [class="(?i)Slack"] move to workspace $ws2
 for_window [class="jetbrains-idea"] move to workspace $ws3
