@@ -21,6 +21,8 @@ alias grep="grep --color=auto -E"
 alias rgrep="grep -RHn"
 alias fgrep="grep -F"
 
+alias pgit='git --no-pager'
+
 # docker
 alias dc='docker-compose'
 alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
@@ -35,7 +37,20 @@ alias cdn='cd ~/go/src/stash.corp.netflix.com/engtools/newt'
 
 alias nerd='vim +NERDTree'
 
-alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-f && say'"
+alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-e && say'"
+
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# unlimited history size in memory and on disk
+HISTSIZE=
+HISTFILESIZE=
+
+# store history constantly
+PROMPT_COMMAND="${PROMPT_COMMAND:-:};history -a"
 
 export EDITOR=vim
 
@@ -66,7 +81,7 @@ if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" ]]; then
     [[ $EUID == 0 ]] && prompt_color=1
     PS1="\[$(tput setaf 3)\]\W \[$(tput setaf $prompt_color)\]%\[$(tput sgr0)\] "
     PS1="\[\e]0;\w\a\]$PS1"
-    [[ -n "$TMUX" ]] && PROMPT_COMMAND="tmux set-window-option automatic-rename on >/dev/null"
+    [[ -n "$TMUX" ]] && PROMPT_COMMAND="${PROMPT_COMMAND};tmux set-window-option automatic-rename on >/dev/null"
     unset prompt_color
 fi
 
