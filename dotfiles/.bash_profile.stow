@@ -74,7 +74,7 @@ PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\
 PS1="\[\e]0;[\h] \w\a\]$PS1"
 
 # screen/tmux specific features
-if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" ]]; then
+if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" || -n "$SHORT_PROMPT" ]]; then
     # simpler prompt, since details are already in the status
     # also set xterm title to working dir
     prompt_color=7

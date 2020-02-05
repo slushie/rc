@@ -108,6 +108,20 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# define the monitors
+set $primary "eDP-1"
+set $secondary "DP-2"
+
+# pin workspace to output
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $primary
+workspace $ws7 output $primary
+workspace $ws10 output $secondary
+
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -178,7 +192,8 @@ mode "resize" {
         bindsym Shift+Up resize shrink height 50 px or 10 ppt
         bindsym Shift+Right resize grow width 50 px or 10 ppt
 
-        bindsym c move absolute position center
+        bindsym c move position center
+        bindsym Shift+c move absolute position center
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -187,10 +202,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# bar {
-#     status_command i3blocks
-# }
 
 for_window [title="Event Tester"] floating enable
 for_window [title="Terminator Preferences"] floating enable
@@ -223,10 +234,13 @@ for_window [class=".*"] title_format " %title <i><small>%class</small></i>"
 for_window [class=i3-frame] title_format " %title <i><small>%class</small></i>"
 
 for_window [class="(?i)Slack"] move to workspace $ws2
-for_window [class="jetbrains-idea"] move to workspace $ws3
 for_window [class="(?i)Firefox"] move to workspace $ws4
 for_window [class="(?i)Spotify"] move to workspace $ws5
 
+for_window [class="jetbrains-idea"] move to workspace $ws3
+for_window [class="jetbrains-idea"] move to workspace $ws3
+
+#for_window [window_type="dialog"] floating disable
 
 
 ## Avoid tiling popups, dropdown windows from plasma

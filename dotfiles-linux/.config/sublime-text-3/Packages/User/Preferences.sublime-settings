@@ -2,7 +2,7 @@
 	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
 	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
-	"font_face": "Iosevka",
+	"font_face": "JetBrains Mono",
 	"font_size": 12,
 	"ignored_packages":
 	[
