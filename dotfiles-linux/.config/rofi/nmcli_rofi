@@ -74,7 +74,7 @@ def choose_adapter(client):
     return devices[0]
 
 
-def create_other_actions(client):
+def create_other_actions(client, adapter=None):
     """Return list of other actions that can be taken
 
     """
@@ -82,7 +82,8 @@ def create_other_actions(client):
     networking_action = "Disable" if networking_enabled else "Enable"
     wifi_enabled = client.wireless_get_enabled()
     wifi_action = "Disable" if wifi_enabled else "Enable"
-    return [Action("{} Wifi".format(wifi_action), toggle_wifi,
+    return [Action("Scan for Wifi Networks", rescan_wifi, adapter),
+            Action("{} Wifi".format(wifi_action), toggle_wifi,
                    not wifi_enabled),
             Action("{} Networking".format(networking_action),
                    toggle_networking, not networking_enabled)]
@@ -195,10 +196,12 @@ def create_ap_actions(aps, active_ap, active_connection):
     for ap, name, sec in zip(aps, names, secs):
         bars = NM.utils_wifi_strength_bars(ap.get_strength()).replace('_', ' ')
         is_active = ap.get_bssid() == active_ap_bssid
+        station_info = '💳 {}  📺 {}MHz'.format(ap.get_bssid(), ap.get_frequency())
         active_flag = "🔷" if is_active else "🔹"
-        action_name = "{} {:<{}s}  {} {:<{}s}".format(active_flag, 
-                                                      name, max_len_name, 
-                                                      bars, sec, max_len_sec)
+        action_name = "{} {:<{}s}  {} {:<{}s}\t{}".format(active_flag, 
+                                                          name, max_len_name, 
+                                                          bars, sec, max_len_sec,
+                                                          station_info)
         if is_active:
             ap_actions.append(Action(action_name, process_ap,
                                      [active_connection, True]))
@@ -280,6 +283,9 @@ def toggle_wifi(enable):
     """
     client.wireless_set_enabled(enable)
 
+def rescan_wifi(adapter):
+    adapter.request_scan()
+
 
 def get_passphrase():
     """Get a password
@@ -336,7 +342,7 @@ def run():
 
     vpn_actions = create_vpn_actions(vpns, active) + [""]
     eth_actions = create_eth_actions(eths, active) + [""]
-    other_actions = create_other_actions(client)
+    other_actions = create_other_actions(client, adapter)
 
     sel = get_selection(vpn_actions + ap_actions + 
                         eth_actions + other_actions)
