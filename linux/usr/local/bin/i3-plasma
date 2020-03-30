@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export KDEWM=/usr/bin/i3
+exec startkde

@@ -8,37 +8,66 @@
     <location key="#Dep.0.0.2560.1440@144dpi" x="672" y="170" />
     <location key="search.everywhere.popup.0.0.2560.1440@144dpi" x="770" y="0" />
     <location key="recent.locations.popup.0.0.2560.1440@144dpi" x="750" y="285" />
-    <location key="SettingsEditor.0.0.2560.1440@168dpi" x="598" y="-16" />
-    <location key="FileChooserDialogImpl.0.0.2560.1440@168dpi" x="892" y="180" />
-    <location key="#Go_Modules_(vgo).0.0.2560.1440@168dpi" x="572" y="137" />
-    <location key="EditFileWatcherDialog.0.0.2560.1440@168dpi" x="682" y="190" />
+    <location key="SettingsEditor.0.0.2560.1440@168dpi" x="-2" y="1" />
+    <location key="FileChooserDialogImpl.0.0.2560.1440@168dpi" x="883" y="31" />
+    <location key="#Go_Modules_(vgo).0.0.2560.1440@168dpi" x="567" y="66" />
+    <location key="EditFileWatcherDialog.0.0.2560.1440@168dpi" x="677" y="119" />
     <location key="search.everywhere.popup.0.0.2560.1440@168dpi" x="696" y="0" />
     <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" x="1035" y="548" />
-    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1620@168dpi" x="576" y="22" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1620@168dpi" x="3" y="69" />
     <location key="EnvironmentVariablesDialog.0.0.2880.1620@168dpi" x="981" y="404" />
     <location key="FileChooserDialogImpl.0.0.2880.1620@168dpi" x="1052" y="271" />
-    <location key="EditFileWatcherDialog.0.0.2880.1620@168dpi" x="291" y="378" />
-    <location key="SettingsEditor.0.0.2880.1620@168dpi" x="-3" y="187" />
+    <location key="EditFileWatcherDialog.0.0.2880.1620@168dpi" x="285" y="314" />
+    <location key="SettingsEditor.0.0.2880.1620@168dpi" x="-3" y="112" />
     <location key="WELCOME_SCREEN.0.0.2880.1620@168dpi" x="1440" y="627" />
     <location key="#Plugins.0.0.2880.1620@168dpi" x="300" y="229" />
-    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2880.1620@168dpi" x="591" y="544" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2880.1620@168dpi" x="585" y="480" />
     <location key="WELCOME_SCREEN.0.0.2560.1440@168dpi" x="1277" y="567" />
     <location key="search.everywhere.popup.0.0.2880.1620@168dpi" x="852" y="0" />
     <location key="bookmarks.0.0.2880.1620@168dpi" x="779" y="394" />
     <location key="refactoring.ChangeSignatureDialog.0.0.2880.1620@168dpi" x="562" y="230" />
     <location key="run.anything.popup.0.0.2880.1620@168dpi" x="418" y="385" />
     <location key="find.popup.0.0.2560.1440@168dpi" x="730" y="137" />
-    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" x="951" y="427" />
-    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" x="869" y="454" />
-    <location key="CommitChangelistDialog2.0.0.2880.1620@168dpi" x="815" y="111" />
-    <location key="Vcs.Push.Dialog.0.0.2880.1620@168dpi" x="1458" y="195" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" x="939" y="246" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" x="864" y="383" />
+    <location key="CommitChangelistDialog2.0.0.2880.1620@168dpi" x="110" y="247" />
+    <location key="Vcs.Push.Dialog.0.0.2880.1620@168dpi" x="1449" y="99" />
     <location key="search.everywhere.popup.0.0.2560.1440@120dpi" x="859" y="385" />
     <location key="SettingsEditor.0.0.2560.1440@120dpi" x="619" y="274" />
     <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" x="957" y="409" />
     <location key="find.popup.0.0.2880.1620@168dpi" x="1126" y="163" />
     <location key="run.anything.popup.0.0.2560.1440@168dpi" x="176" y="348" />
-    <location key="CommitChangelistDialog2.0.0.2560.1440@168dpi" x="1251" y="48" />
+    <location key="CommitChangelistDialog2.0.0.2560.1440@168dpi" x="113" y="-15" />
     <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440@168dpi" x="301" y="292" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2880.1620@168dpi" x="394" y="366" />
+    <location key="vcs.readOnlyHandler.ReadOnlyStatusDialog.0.0.2880.1620@168dpi" x="1037" y="614" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2560.1440@168dpi" x="463" y="424" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2880.1620@168dpi" x="534" y="529" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440@168dpi" x="139" y="22" />
+    <location key="#Go_Modules_(vgo).0.0.2880.1620@168dpi" x="3" y="101" />
+    <location key="scopes.0.0.2880.1620@168dpi" x="230" y="83" />
+    <location key="VCS.ChangeListViewerDialog.0.0.2560.1440@168dpi" x="184" y="34" />
+    <location key="EnvironmentVariablesDialog.0.0.2560.1440@168dpi" x="290" y="31" />
+    <location key="Vcs.Push.Dialog.0.0.2560.1440@168dpi" x="51" y="-3" />
+    <location key="StructurePopup.0.0.2880.1620@168dpi" x="308" y="353" />
+    <location key="DiffContextDialog.0.0.2560.1440@168dpi" x="-2" y="33" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2560.1440@168dpi" x="240" y="107" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2880.1620@168dpi" x="263" y="122" />
+    <location key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.2560.1440@168dpi" x="-2" y="79" />
+    <location key="DiffContextDialog.0.0.2880.1620@168dpi" x="-2" y="-39" />
+    <location key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog.0.0.2560.1440@168dpi" x="51" y="-34" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.2560.1440@168dpi" x="377" y="184" />
+    <location key="search.everywhere.popup.0.0.3840.2160@168dpi" x="369" y="182" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.3840.2160@168dpi" x="404" y="460" />
+    <location key="find.popup.0.0.3840.2160@168dpi" x="395" y="407" />
+    <location key="CommitChangelistDialog2.0.0.3840.2160@168dpi" x="307" y="346" />
+    <location key="Vcs.Push.Dialog.0.0.3840.2160@168dpi" x="403" y="394" />
+    <location key="SettingsEditor.0.0.3840.2160@168dpi" x="63" y="417" />
+    <location key="run.anything.popup.0.0.3840.2160@168dpi" x="371" y="496" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" x="542" y="846" />
+    <location key="search.everywhere.popup.0.0.3440.1440@168dpi" x="269" y="0" />
+    <location key="VCS.ChangeListViewerDialog.0.0.3440.1440@168dpi" x="630" y="11" />
+    <location key="SettingsEditor.0.0.3440.1440@168dpi" x="135" y="57" />
     <size key="FileChooserDialogImpl.0.0.2560.1440@144dpi" width="642" height="717" />
     <size key="SettingsEditor.0.0.2560.1440@144dpi" width="1528" height="1049" />
     <size key="#GOROOT.0.0.2560.1440@144dpi" width="1206" height="1007" />
@@ -48,46 +77,93 @@
     <size key="FileChooserDialogImpl.0.0.2560.1440@168dpi" width="742" height="825" />
     <size key="#Go_Modules_(vgo).0.0.2560.1440@168dpi" width="1406" height="1167" />
     <size key="SettingsEditor.0.0.2560.1440@168dpi" width="1756" height="1328" />
-    <size key="EditFileWatcherDialog.0.0.2560.1440@168dpi" width="1151" height="746" />
+    <size key="EditFileWatcherDialog.0.0.2560.1440@168dpi" width="1305" height="1120" />
     <size key="search.everywhere.popup.0.0.2560.1440@168dpi" width="1177" height="1436" />
     <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2880.1620@168dpi" width="805" height="369" />
     <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2880.1620@168dpi" width="1686" height="1130" />
     <size key="EnvironmentVariablesDialog.0.0.2880.1620@168dpi" width="908" height="754" />
-    <size key="GridCell.Tab.0.left.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.0.center.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.0.right.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.0.bottom.0.0.2880.1620@168dpi" width="2012" height="598" />
+    <size key="GridCell.Tab.0.left.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.0.center.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.0.right.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.0.bottom.0.0.2880.1620@168dpi" width="1724" height="595" />
     <size key="FileChooserDialogImpl.0.0.2880.1620@168dpi" width="748" height="829" />
-    <size key="EditFileWatcherDialog.0.0.2880.1620@168dpi" width="1151" height="746" />
-    <size key="SettingsEditor.0.0.2880.1620@168dpi" width="1766" height="1247" />
+    <size key="EditFileWatcherDialog.0.0.2880.1620@168dpi" width="1305" height="1120" />
+    <size key="SettingsEditor.0.0.2880.1620@168dpi" width="1766" height="1332" />
     <size key="javadoc.popup.0.0.2880.1620@168dpi" width="1054" height="719" />
-    <size key="GridCell.Tab.1.left.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.1.center.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.1.right.0.0.2880.1620@168dpi" width="2012" height="598" />
-    <size key="GridCell.Tab.1.bottom.0.0.2880.1620@168dpi" width="2012" height="598" />
+    <size key="GridCell.Tab.1.left.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.1.center.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.1.right.0.0.2880.1620@168dpi" width="1724" height="595" />
+    <size key="GridCell.Tab.1.bottom.0.0.2880.1620@168dpi" width="1724" height="595" />
     <size key="#Plugins.0.0.2880.1620@168dpi" width="1406" height="1167" />
-    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.2880.1620@168dpi" width="824" height="537" />
+    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.2880.1620@168dpi" width="1089" height="537" />
     <size key="search.everywhere.popup.0.0.2880.1620@168dpi" width="1177" height="1616" />
     <size key="bookmarks.0.0.2880.1620@168dpi" width="1330" height="593" />
     <size key="refactoring.ChangeSignatureDialog.0.0.2880.1620@168dpi" width="882" height="1166" />
     <size key="find.popup.0.0.2560.1440@168dpi" width="1099" height="1230" />
-    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" width="648" height="591" />
-    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" width="812" height="537" />
+    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@168dpi" width="648" height="631" />
+    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.2560.1440@168dpi" width="1010" height="537" />
     <size key="CommitChangelistDialog2.0.0.2880.1620@168dpi" width="1215" height="1016" />
     <size key="search.everywhere.popup.0.0.2560.1440@120dpi" width="840" height="1037" />
     <size key="SettingsEditor.0.0.2560.1440@120dpi" width="1312" height="897" />
     <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440@144dpi" width="636" height="595" />
     <size key="find.popup.0.0.2880.1620@168dpi" width="1199" height="1314" />
-    <size key="GridCell.Tab.0.left.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.0.center.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.0.right.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.0.bottom.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.1.left.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.1.center.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.1.right.0.0.2560.1440@168dpi" width="1175" height="1028" />
-    <size key="GridCell.Tab.1.bottom.0.0.2560.1440@168dpi" width="1175" height="1028" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.1.left.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.1.center.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.1.right.0.0.2560.1440@168dpi" width="1532" height="425" />
+    <size key="GridCell.Tab.1.bottom.0.0.2560.1440@168dpi" width="1532" height="425" />
     <size key="XDebugger.FullValuePopup.0.0.2560.1440@168dpi" width="1283" height="737" />
     <size key="CommitChangelistDialog2.0.0.2560.1440@168dpi" width="1306" height="1360" />
     <size key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440@168dpi" width="923" height="861" />
+    <size key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2880.1620@168dpi" width="923" height="861" />
+    <size key="GridCell.Tab.2.left.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.center.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.right.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.bottom.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.left.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.center.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.right.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.bottom.0.0.2880.1620@168dpi" width="1724" height="586" />
+    <size key="vcs.readOnlyHandler.ReadOnlyStatusDialog.0.0.2880.1620@168dpi" width="795" height="334" />
+    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2560.1440@168dpi" width="843" height="378" />
+    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2880.1620@168dpi" width="650" height="599" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440@168dpi" width="1766" height="1130" />
+    <size key="run.anything.popup.0.0.2560.1440@168dpi" width="1177" height="1976" />
+    <size key="#Go_Modules_(vgo).0.0.2880.1620@168dpi" width="1406" height="1167" />
+    <size key="scopes.0.0.2880.1620@168dpi" width="1406" height="1167" />
+    <size key="GridCell.Tab.2.left.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.center.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.right.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.2.bottom.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.left.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.center.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.right.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="GridCell.Tab.3.bottom.0.0.2560.1440@168dpi" width="1724" height="586" />
+    <size key="VCS.ChangeListViewerDialog.0.0.2560.1440@168dpi" width="1158" height="1314" />
+    <size key="DebuggerActiveHint.0.0.2560.1440@168dpi" width="655" height="1046" />
+    <size key="EnvironmentVariablesDialog.0.0.2560.1440@168dpi" width="908" height="828" />
+    <size key="Vcs.Push.Dialog.0.0.2880.1620@168dpi" width="1219" height="1267" />
+    <size key="StructurePopup.0.0.2880.1620@168dpi" width="945" height="915" />
+    <size key="Vcs.Push.Dialog.0.0.2560.1440@168dpi" width="1287" height="1267" />
+    <size key="DiffContextDialog.0.0.2560.1440@168dpi" width="2052" height="1193" />
+    <size key="javadoc.popup.new.0.0.2560.1440@168dpi" width="656" height="304" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2560.1440@168dpi" width="1045" height="1127" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2880.1620@168dpi" width="899" height="1199" />
+    <size key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.2560.1440@168dpi" width="1593" height="1184" />
+    <size key="DiffContextDialog.0.0.2880.1620@168dpi" width="2308" height="1337" />
+    <size key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog.0.0.2560.1440@168dpi" width="1310" height="1409" />
+    <size key="#com.intellij.ide.util.MemberChooser.0.0.2560.1440@168dpi" width="659" height="974" />
+    <size key="search.everywhere.popup.0.0.3840.2160@168dpi" width="1177" height="1976" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.3840.2160@168dpi" width="1230" height="1130" />
+    <size key="find.popup.0.0.3840.2160@168dpi" width="1129" height="1314" />
+    <size key="CommitChangelistDialog2.0.0.3840.2160@168dpi" width="1295" height="1370" />
+    <size key="SettingsEditor.0.0.3840.2160@168dpi" width="1784" height="1227" />
+    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.3840.2160@168dpi" width="826" height="370" />
+    <size key="search.everywhere.popup.0.0.3440.1440@168dpi" width="1177" height="1436" />
+    <size key="VCS.ChangeListViewerDialog.0.0.3440.1440@168dpi" width="794" height="1320" />
+    <size key="SettingsEditor.0.0.3440.1440@168dpi" width="1784" height="1227" />
   </component>
 </application>

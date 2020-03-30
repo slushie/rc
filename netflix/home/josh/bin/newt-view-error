@@ -6,6 +6,13 @@ count=10
 
 pattern="$@"
 
+function view_file () {
+    file="$1"
+    pager=${PAGER:-less -R}
+    echo ">>> $file"
+    exec $pager "$file"
+}
+
 while read -r f; do
     ts="$(sed -n 1p "$f" | cut -d\  -f2-)"
     cmd="$(sed -n 2p "$f" | cut -d\  -f3-)"
@@ -15,6 +22,10 @@ while read -r f; do
     files+=("$f")
     names+=("$(printf "%s\t\e[1m%s\e[0m" "$ts" "$cmd")")
 done < <(find $HOME/.newt-cache/run-logs -maxdepth 2 -type f -name debug.log | sort -r)
+
+if [[ "$count" == "1" ]]; then
+    view_file "${files[0]}"
+fi
 
 min=0
 PS3="selection: (1-$count,more,quit) "
@@ -28,9 +39,7 @@ while true; do select cmd in "${names[@]:min:count}"; do
                 continue 2
             fi
             n=$((min+REPLY-1))
-            pager=${PAGER:-less -R}
-            echo ">>> ${files[n]}"
-            exec $pager "${files[n]}"
+            view_file "${files[n]}"
             ;;
     esac
     echo ">>> more"

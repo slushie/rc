@@ -1,0 +1,21 @@
+[http "https://stash.corp.netflix.com:7004"]
+    sslCert = ~/.metatron/user.crt
+    sslKey = ~/.metatron/user.key
+    sslCAinfo = ~/.metatron/metatronClient.trust.pem
+    sslVerify = true
+
+[url "ssh://git@stash.corp.netflix.com:7999"]
+	insteadOf = https://stash.corp.netflix.com:7004/scm
+[url "ssh://git@stash.corp.netflix.com:7999"]
+	insteadOf = https://stash.corp.netflix.com/scm
+[user]
+	email = jleder@netflix.com
+	name = Josh Leder
+[merge]
+	tool = meld
+[alias]
+    recent=for-each-ref --sort=-committerdate --format='%(color:green bold)%(HEAD)%(color:reset) %(align:width=16)%(color:bold)%(refname:short)%(color:reset)%(end) %(color:magenta)%(committerdate:local)%(color:reset) %(subject)' refs/heads/ --count 5
+[core]
+	pager = less -+X -+F
+[push]
+	default = upstream
