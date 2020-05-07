@@ -13,8 +13,17 @@ colorize () {
     echo $text
 }
 
-case $(nmcli -g general.state con show 'Corporate LAN') in
-    "")             colorize 1 "" ;;
+nmcli -t -f type,uuid,state con show |
+while IFS=: read type uuid state; do
+    [[ "$type" == "vpn" ]]  || continue
+    [[ -n "$state" ]]       || continue
+    case "$state" in
     "activating")   colorize 2 "" ;;
     "activated")    colorize 3 "" ;;
-esac
+    esac
+    exit
+done
+
+colorize 1 ""
+
+

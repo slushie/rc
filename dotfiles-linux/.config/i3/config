@@ -35,6 +35,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start terminal in the same dir
 bindsym $mod+Shift+Return exec ~/bin/termhere.sh
 
+# disable scroll wheel on titles
+bindsym button4 nop
+bindsym button5 nop
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -109,18 +112,20 @@ set $ws9 "9"
 set $ws10 "10"
 
 # define the monitors
-set $primary "eDP-1"
-set $secondary "DP-2"
+set $out0 "eDP-1"
+set $out1 "DP-1"
+set $out2 "DP-2"
 
 # pin workspace to output
-workspace $ws1 output $primary
-workspace $ws2 output $primary
-workspace $ws3 output $primary
-workspace $ws4 output $primary
-workspace $ws5 output $primary
-workspace $ws6 output $primary
-workspace $ws7 output $primary
-workspace $ws10 output $secondary
+workspace $ws1 output $out1 $out0
+workspace $ws2 output $out2 $out1 $out0
+workspace $ws3 output $out1 $out0
+workspace $ws4 output $out1 $out0
+workspace $ws5 output $out0
+workspace $ws6 output $out1 $out0
+workspace $ws7 output $out1 $out0
+workspace $ws9 output $out0
+workspace $ws10 output $out2 $out1 $out0
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -137,6 +142,9 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 bindsym $mod+grave workspace back_and_forth
+
+bindsym $mod+Mod1+Left move workspace to output left
+bindsym $mod+Mod1+Right move workspace to output right
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -234,14 +242,10 @@ for_window [class=".*"] title_format " %title <i><small>%class</small></i>"
 for_window [class=i3-frame] title_format " %title <i><small>%class</small></i>"
 
 for_window [class="(?i)Slack"] move to workspace $ws2
-for_window [class="(?i)Firefox"] move to workspace $ws4
+for_window [class="(?i)Firefox" window_type="normal"] move to workspace $ws4
 for_window [class="(?i)Spotify"] move to workspace $ws5
 
 for_window [class="jetbrains-idea"] move to workspace $ws3
-for_window [class="jetbrains-idea"] move to workspace $ws3
-
-#for_window [window_type="dialog"] floating disable
-
 
 ## Avoid tiling popups, dropdown windows from plasma
 # for the first time, manually resize them, i3 will remember the setting for floating windows
@@ -257,6 +261,7 @@ for_window [class="Plasmoidviewer"] floating enable, border none
 for_window [class="plasmashell"] floating enable
 
 # Don’t spawn an empty window for the Plasma Desktop
+for_window [class="ksplashqml"] kill
 for_window [title="Desktop — Plasma"] kill
 
 # Don’t let notifications and non-interactive pop-up windows steal focus

@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Chmod",
 		"Color Highlight",
 		"Dockerfile Syntax Highlighting",
 		"Dracula Color Scheme",
