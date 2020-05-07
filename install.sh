@@ -24,7 +24,10 @@ platform=$(uname | tr A-Z a-z)
 packages=(dotfiles dotfiles-$platform)
 system_packages=($platform)
 
-
+if ! which stow >/dev/null ; then
+    echo 1>&2 "ERROR: could not find 'stow' in your PATH"
+    exit 1
+fi
 
 echo 1>&2 "NOTE: installing user packages to HOME=$HOME"
 echo -n "[${packages[*]}] press enter:"
@@ -33,12 +36,12 @@ read
 # user-local packages
 for pkg in ${packages[@]}; do
     echo 1>&2 "Installing '$pkg'... "
-    if ! install "$pkg" "$HOME"; then
-        err=$?
-        echo 1>&2 "Package $pkg had error: ERR$err"
-    else
-        echo 1>&2 "Package $pkg installed OK"
-    fi
+    install "$pkg" "$HOME"
+    case $? in
+        0) echo 1>&2 "Package $pkg installed OK" ;;
+        1) echo 1>&2 "Package $pkg not used" ;;
+        *) echo 1>&2 "Package $pkg had error" ;;
+    esac
 done
 
 echo 1>&2 "NOTE: installing system packages to root directory"
@@ -49,12 +52,12 @@ fi
 
 for pkg in ${system_packages[@]}; do
     echo 1>&2 "Installing '$pkg'... "
-    if ! install "$pkg" "/" sudo; then
-        err=$?
-        echo 1>&2 "Package $pkg had error: ERR$err"
-    else
-        echo 1>&2 "Package $pkg installed OK"
-    fi
+    install "$pkg" "/" sudo
+    case $? in
+        0) echo 1>&2 "Package $pkg installed OK" ;;
+        1) echo 1>&2 "Package $pkg not used" ;;
+        *) echo 1>&2 "Package $pkg had error" ;;
+    esac
 done
 
 echo 1>&2 "Done."
