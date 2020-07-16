@@ -1,8 +1,18 @@
 #!/bin/bash
 # adopt an existing file into a stow package
 
+if [[ "$#" -lt 2 ]]; then
+    echo "Usage:"
+    echo "    $0 <pkg> <file>"
+    exit 1
+fi
+
+function real_path () {
+    perl -MCwd=realpath -E '$_=realpath shift;-e && say' "$@"
+}
+
 pkg="$1"
-file="$(readlink -f "$2")"
+file="$(real_path "$2")"
 target="$3"
 
 if [[ -z "$target" ]]; then
@@ -14,7 +24,7 @@ if [[ -z "$target" ]]; then
 fi
 
 set -e
-stow_dir="$(readlink -f "$(dirname "$(readlink -f "$0")")/../..")"
+stow_dir="$(real_path "$(dirname "$(real_path "$0")")/../..")"
 target="${target%/}/"
 stowed="$stow_dir/$pkg/${file##$target}"
 

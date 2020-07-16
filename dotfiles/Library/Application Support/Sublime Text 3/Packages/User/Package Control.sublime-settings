@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Chmod",
+		"Color Highlight",
+		"Dockerfile Syntax Highlighting",
+		"Dracula Color Scheme",
+		"INI",
+		"JSX",
+		"LSP",
+		"MarkdownEditing",
+		"One Dark Color Scheme",
+		"Package Control",
+		"SideBarEnhancements",
+		"TypeScript Syntax"
+	]
+}
