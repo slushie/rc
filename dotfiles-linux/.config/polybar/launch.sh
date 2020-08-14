@@ -23,5 +23,5 @@ fi
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar bottom 2>out.log &
+polybar bottom &
 disown -ah

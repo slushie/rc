@@ -3,7 +3,7 @@
 	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "JetBrains Mono",
-	"font_size": 14,
+	"font_size": 10,
 	"ignored_packages":
 	[
 		"Markdown",
@@ -13,5 +13,5 @@
 	"tab_completion": false,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"ui_scale": 1.5
+	"ui_scale": 2
 }

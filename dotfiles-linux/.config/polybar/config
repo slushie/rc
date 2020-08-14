@@ -36,7 +36,7 @@ foreground-alt = ${self.secondary}
 [bar/bottom]
 monitor = ${env:MONITOR}
 width = 100%
-height = 32
+height = 40
 ;offset-x = 1%
 ; offset-y = 1%
 ; radius = 6.0
@@ -46,7 +46,7 @@ bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 4
 line-color = #E92EFB
 
 ; border-size = 4
@@ -59,9 +59,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 ; font-0 = Iosevka:pixelsize=16;3
-font-0 = JetBrains Mono:pixelsize=16;3
+font-0 = JetBrains Mono:pixelsize=20;3
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-1 = FontAwesome:pixelsize=20;4
+font-1 = FontAwesome:pixelsize=24;4
 font-2 = "Noto Color Emoji:scale=7;4"
 
 modules-left = i3
