@@ -34,7 +34,7 @@ foreground = #e0d0f0
 foreground-alt = ${self.secondary}
 
 [bar/bottom]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 40
 ;offset-x = 1%

@@ -12,6 +12,8 @@
 		"INI",
 		"JSX",
 		"LSP",
+		"LuaExtended",
+		"LuaFormatter",
 		"MarkdownEditing",
 		"One Dark Color Scheme",
 		"Package Control",

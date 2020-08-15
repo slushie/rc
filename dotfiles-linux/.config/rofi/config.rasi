@@ -1,9 +1,10 @@
 configuration {
-	width: 35;
-	lines: 12;
-	font: "Iosevka 16";
-	bw: 2;
-	padding: 15;
+	width: 60;
+	lines: 15;
+	font: "JetBrains Mono 10.5";
+	bw: 3;
+    dpi: 1;
+	padding: 25;
 	separator-style: "none";
 	hide-scrollbar: true;
 
