@@ -1,7 +1,7 @@
 configuration {
 	width: 60;
 	lines: 15;
-	font: "JetBrains Mono 10.5";
+	font: "JetBrains Mono 9.75";
 	bw: 3;
     dpi: 1;
 	padding: 25;

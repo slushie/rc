@@ -13,5 +13,6 @@
 	"tab_completion": false,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"ui_scale": 2
+	"ui_scale": 2,
+	"spell_check": false
 }

@@ -23,6 +23,8 @@ alias fgrep="grep -F"
 
 alias pgit='git --no-pager'
 
+alias man='MANWIDTH=$((COLUMNS > 80 ? 80 : COLUMNS)) man'
+
 # docker
 alias dc='docker-compose'
 alias dr='docker run -ti -v $PWD:$PWD -w $PWD "$@"'
