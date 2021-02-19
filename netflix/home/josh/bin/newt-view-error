@@ -2,8 +2,14 @@
 
 declare -a names
 declare -a files
-count=10
+declare -i index
 
+if [[ "$1" =~ ^[0-9]+$ ]]; then
+    index=$1
+    shift
+fi
+
+count=10
 pattern="$@"
 
 function view_file () {
@@ -23,7 +29,9 @@ while read -r f; do
     names+=("$(printf "%s\t\e[1m%s\e[0m" "$ts" "$cmd")")
 done < <(find $HOME/.newt-cache/run-logs -maxdepth 2 -type f -name debug.log | sort -r)
 
-if [[ "$count" == "1" ]]; then
+if [[ -n "$index" ]]; then
+    view_file "${files[$index]}"
+elif [[ "$count" == "1" ]]; then
     view_file "${files[0]}"
 fi
 
