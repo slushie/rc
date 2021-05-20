@@ -33,7 +33,7 @@ alias k='kubectl'
 
 # netflix
 alias metacurl='curl -k --cacert ~/.metatron/metatronClient.trust.pem --cert ~/.metatron/user.crt --key ~/.metatron/user.key'
-alias bionicbase='dr --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/baseos/bionic'
+alias bionicbase='dr -v $HOME/.metatron:/run/metatron -v $HOME/.metatron:/metatron --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/baseos/bionic'
 alias xenialbase='dr --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/engtools/xenialbase'
 alias cdn='cd ~/go/src/stash.corp.netflix.com/engtools/newt'
 
