@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eu
+
+declare -a emails=()
+
+if [[ $# -gt 0 ]]; then
+    emails+=($@)
+else
+    echo 1>&2 "Reading emails from STDIN"
+    while read email; do
+        [[ -n "$email" ]] || continue
+        emails+=( "$email" )
+    done
+fi
+
+if [[ $#emails == 0 ]]; then
+    exit 0
+fi
+
+for email in "${emails[@]}"; do
+    metatron curl -a pandora "https://api.pandora.prod.netflix.net:7004/REST/v3/users/$email?domain=netflix.com" | \
+        jq -r '[.userName, .name.fullName, (.customAttributes | .title, .supervisoryOrganization, .departmentName)] | @tsv'
+done

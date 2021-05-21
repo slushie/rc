@@ -1,0 +1,1 @@
+This directory contains .desktop files. It can run a command during autostart, the file must have an "Exec" entry. It can disable a command that would be run by a .desktop file in /etc/xdg/autostart by writing an empty file with the same name in this directory, or by copying the file and setting "Hidden=true"

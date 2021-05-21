@@ -1783,9 +1783,9 @@ rofi = Popen(
         '-i',
         '-multi-select',
         '-p',
-        '😀 ',
+        '[Return or Ctrl-C] 😀 ',
         '-kb-custom-1',
-        'Alt+c'
+        'Ctrl+c'
     ],
     stdin=PIPE,
     stdout=PIPE
@@ -1816,11 +1816,7 @@ else:
         )
     elif rofi.returncode == 10:
         xsel = Popen(
-            args=[
-                'xsel',
-                '-i',
-                '-b'
-            ],
+            args=['xclip', '-selection', 'clipboard'],
             stdin=PIPE
         )
         xsel.communicate(input=emojis.encode('utf-8'))

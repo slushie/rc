@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=X Session
+TryExec=/etc/X11/Xsession
+Exec=/etc/X11/Xsession
+Type=Application
+Icon=/usr/share/pixmaps/awesome.xpm
+Keywords=User script

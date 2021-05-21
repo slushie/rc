@@ -29,6 +29,15 @@ if ! which stow >/dev/null ; then
     exit 1
 fi
 
+if [[ "$@" != "" ]]; then
+    if [[ "$1" == "-s" ]]; then
+        shift
+        system_packages=($@)
+    else
+        packages=($@)
+    fi
+fi
+
 echo 1>&2 "NOTE: installing user packages to HOME=$HOME"
 echo -n "[${packages[*]}] press enter:"
 read

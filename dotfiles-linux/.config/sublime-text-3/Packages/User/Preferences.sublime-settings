@@ -3,16 +3,16 @@
 	"drag_text": false,
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "JetBrains Mono",
-	"font_size": 10,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Markdown",
 		"Vintage"
 	],
 	"save_on_focus_lost": true,
+	"spell_check": false,
 	"tab_completion": false,
 	"theme": "Adaptive.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"ui_scale": 2,
-	"spell_check": false
+	"ui_scale": 1
 }
