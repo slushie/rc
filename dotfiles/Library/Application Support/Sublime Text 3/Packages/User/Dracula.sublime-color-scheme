@@ -1,0 +1,24 @@
+{
+    // http://www.sublimetext.com/docs/3/color_schemes.html
+    "variables": {
+        // "green": "#FF0000",
+    },
+    "globals": {
+        // "foreground": "var(green)",
+    },
+    "rules": [
+        {
+            "scope": "type",
+            "foreground": "#66d9ef",
+            "font_style": "italic"
+        },
+        {
+            "scope": "constant",
+            "foreground": "#ffb86c"
+        },
+        {
+            "scope": "variable",
+            "foreground": "#D1D1D1FF"
+        },
+    ],
+}

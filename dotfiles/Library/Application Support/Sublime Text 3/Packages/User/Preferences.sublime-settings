@@ -7,11 +7,16 @@
 	"ensure_newline_at_eof_on_save": true,
 	"font_face": "JetBrains Mono Regular",
 	"font_size": 14,
+	"gravity_highlight_color_blue": true,
+	"gravity_selected_tab_bold": true,
+	"gravity_title_bar": true,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
 	],
 	"save_on_focus_lost": true,
-	"theme": "Adaptive.sublime-theme",
+	"tab_size": 2,
+	"theme": "Gravity One.sublime-theme",
 	"translate_tabs_to_spaces": true
 }
