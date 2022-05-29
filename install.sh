@@ -29,44 +29,52 @@ if ! which stow >/dev/null ; then
     exit 1
 fi
 
-if [[ "$@" != "" ]]; then
+if [[ $# -gt 0 ]]; then
     if [[ "$1" == "-s" ]]; then
         shift
+        packages=()
         system_packages=($@)
     else
+        system_packages=()
         packages=($@)
     fi
 fi
 
-echo 1>&2 "NOTE: installing user packages to HOME=$HOME"
-echo -n "[${packages[*]}] press enter:"
-read
 
-# user-local packages
-for pkg in ${packages[@]}; do
-    echo 1>&2 "Installing '$pkg'... "
-    install "$pkg" "$HOME"
-    case $? in
-        0) echo 1>&2 "Package $pkg installed OK" ;;
-        1) echo 1>&2 "Package $pkg not used" ;;
-        *) echo 1>&2 "Package $pkg had error" ;;
-    esac
-done
+if [[ ${#packages[@]} -gt 0 ]]; then
+    echo 1>&2 "NOTE: installing user packages to HOME=$HOME"
+    echo -n "[${packages[*]}] press enter:"
+    read
 
-echo 1>&2 "NOTE: installing system packages to root directory"
-if ! sudo -p "[sudo: ${system_packages[*]}] password for %p:" -v ; then
-    echo 1>&2 "system installation cancelled."
-    exit
+    # user-local packages
+    for pkg in ${packages[@]}; do
+        echo 1>&2 "Installing '$pkg'... "
+        install "$pkg" "$HOME"
+        case $? in
+            0) echo 1>&2 "Package $pkg installed OK" ;;
+            1) echo 1>&2 "Package $pkg not used" ;;
+            *) echo 1>&2 "Package $pkg had error" ;;
+        esac
+    done
 fi
 
-for pkg in ${system_packages[@]}; do
-    echo 1>&2 "Installing '$pkg'... "
-    install "$pkg" "/" sudo
-    case $? in
-        0) echo 1>&2 "Package $pkg installed OK" ;;
-        1) echo 1>&2 "Package $pkg not used" ;;
-        *) echo 1>&2 "Package $pkg had error" ;;
-    esac
-done
+
+if [[ ${#system_packages[@]} -gt 0 ]]; then
+    echo 1>&2 "NOTE: installing system packages to root directory"
+    if ! sudo -p "[sudo: ${system_packages[*]}] password for %p:" -v ; then
+        echo 1>&2 "system installation cancelled."
+        exit
+    fi
+
+    for pkg in ${system_packages[@]}; do
+        echo 1>&2 "Installing '$pkg'... "
+        install "$pkg" "/" sudo
+        case $? in
+            0) echo 1>&2 "Package $pkg installed OK" ;;
+            1) echo 1>&2 "Package $pkg not used" ;;
+            *) echo 1>&2 "Package $pkg had error" ;;
+        esac
+    done
+fi
 
 echo 1>&2 "Done."
