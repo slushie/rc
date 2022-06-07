@@ -1,10 +1,12 @@
 #!/bin/bash
 # this is the main installation script
 
+set -e
+
 install () {
     pkg="$1"
     target="$2"
-    bin="$3"
+    bin="${3:-command}"
 
     [[ -d "$pkg" ]] || return 1
     if [[ -x "$pkg.preinstall" ]]; then
@@ -49,7 +51,7 @@ if [[ ${#packages[@]} -gt 0 ]]; then
     # user-local packages
     for pkg in ${packages[@]}; do
         echo 1>&2 "Installing '$pkg'... "
-        install "$pkg" "$HOME"
+        install "$pkg" "$HOME" 
         case $? in
             0) echo 1>&2 "Package $pkg installed OK" ;;
             1) echo 1>&2 "Package $pkg not used" ;;
