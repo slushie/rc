@@ -3,4 +3,4 @@ button-layout='appmenu:close'
 
 [org.gnome.gnome-flashback:i3-GNOME-Flashback]
 desktop=false
-root-background=true
+root-background=false

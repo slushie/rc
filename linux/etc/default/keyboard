@@ -1,10 +1,5 @@
-# KEYBOARD CONFIGURATION FILE
-
-# Consult the keyboard(5) manual page.
-
-XKBMODEL="pc105"
 XKBLAYOUT="us"
-XKBVARIANT="mac"
-XKBOPTIONS="ctrl:nocaps"
-
+XKBVARIANT=""
 BACKSPACE="guess"
+XKBOPTIONS="altwin:swap_alt_win,ctrl:nocaps"
+XKBMODEL="pc105"

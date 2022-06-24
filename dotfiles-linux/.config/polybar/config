@@ -17,31 +17,72 @@
 ;==========================================================
 
 
-    ; #e0d0f0
-    ; #E92EFB
-    ; #FF2079
-    ; #440BD4
-    ; #04005E
+    ; #e0d0f0 - fg
+    ; #E92EFB - alert
+    ; #FF2079 - secondary /fg alt
+    ; #440BD4 - primary / bg alt
+    ; #04005E - background
+
+
+
+#    /* Dracula theme colour palette */
+#    drac-bgd: #282a36;
+#    drac-cur: #44475a;
+#    drac-fgd: #f8f8f2;
+#    drac-cmt: #6272a4;
+#    drac-cya: #8be9fd;
+#    drac-grn: #50fa7b;
+#    drac-ora: #ffb86c;
+#    drac-pnk: #ff79c6;
+#    drac-pur: #bd93f9;
+#    drac-red: #ff5555;
+#    drac-yel: #f1fa8c;
+#
+
 
 [colors]
-primary = #440BD4
-secondary = #FF2079
-alert = #E92EFB
 
-background = #04005E
-background-alt = ${self.primary}
-foreground = #e0d0f0
-foreground-alt = ${self.secondary}
+drac-bgd = #282a36
+drac-cur = #44475a
+drac-fgd = #f8f8f2
+drac-cmt = #6272a4
+drac-cya = #8be9fd
+drac-grn = #50fa7b
+drac-ora = #ffb86c
+drac-pnk = #ff79c6
+drac-pur = #bd93f9
+drac-red = #ff5555
+drac-yel = #f1fa8c
+
+
+primary = ${self.drac-cya}
+secondary = ${self.drac-ora}
+alert = ${self.drac-red}
+
+background = ${self.drac-bgd}
+background-alt = ${self.drac-cur}
+foreground = ${self.drac-fgd}
+foreground-alt = ${self.drac-pnk}
+
+; primary = #440BD4
+; secondary = #FF2079
+; alert = #E92EFB
+
+; background = #04005E
+; background-alt = ${self.primary}
+; foreground = #e0d0f0
+; foreground-alt = ${self.secondary}
 
 [bar/bottom]
-monitor = ${env:MONITOR:eDP-1}
+;monitor = ${env:MONITOR:eDP-1}
 width = 100%
-height = 40
+height = 28
 ;offset-x = 1%
 ; offset-y = 1%
 ; radius = 6.0
 fixed-center = false
-bottom = true
+; bottom = true
+top = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -59,14 +100,14 @@ module-margin-left = 1
 module-margin-right = 1
 
 ; font-0 = Iosevka:pixelsize=16;3
-font-0 = JetBrains Mono:pixelsize=20;3
+font-0 = JetBrains Mono:pixelsize=12;3
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-1 = FontAwesome:pixelsize=24;4
-font-2 = "Noto Color Emoji:scale=7;4"
+font-1 = FontAwesome:pixelsize=12;4
+font-2 = "Noto Color Emoji:scale=9;4"
 
-modules-left = i3
-modules-center = 
-modules-right = spotify vpn wlan pulseaudio filesystem memory cpu temperature battery date
+modules-left = menu-button i3
+modules-center = title
+modules-right = spotify pulseaudio filesystem memory cpu temperature battery date
 
 tray-position = right
 tray-padding = 0
@@ -75,13 +116,22 @@ tray-maxsize = 28
 cursor-click = pointer
 ; cursor-scroll = ns-resize
 
+[module/menu-button]
+type = custom/text
+content = "  "
+content-padding = 0
+content-foreground = ${colors.drac-bgd}
+content-background = ${colors.drac-cya}
+click-left = rofi -show drun
+
+
 [module/spotify]
 type = custom/script
-exec = python ~/.config/polybar/spotify_status.py -t 25 -f "%{{F#FF2079}}{play_pause}%{{F-}} {artist}: {song}" -p ","
+exec = python3 ~/.config/polybar/spotify_status.py -t 25 -f "%{{F#FF2079}}{play_pause}%{{F-}} {artist}: {song}" -p ","
 click-left = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 click-middle = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 click-right = dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
-interval = 1
+interval = 5
 format = <label>
 ; format-underline = #1db954
 
@@ -96,6 +146,27 @@ format-mounted-prefix-foreground = ${colors.foreground-alt}
 label-mounted = %free%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/title]
+type = internal/xwindow
+
+format = <label>
+format-foreground = ${colors.foreground}
+format-padding = 4
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 0
+label-underline = ${colors.drac-pur}
+
+; Used instead of label when there is no window title
+; Available tokens:
+;   None
+label-empty = no windows
+label-empty-foreground = ${colors.drac-pnk}
+; label-empty-underline =
 
 [module/i3]
 type = internal/i3
@@ -116,13 +187,14 @@ ws-icon-default = ""
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 1
-label-mode-background = ${colors.primary}
+label-mode-padding = 5
+label-mode-background = ${colors.drac-pnk}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.background-alt}
+label-focused-foreground = ${colors.drac-bgd}
+label-focused-background = ${colors.drac-ora}
+; label-focused-underline= ${colors.background-alt}
 label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
@@ -143,41 +215,6 @@ label-urgent-padding = 1
 ; Separator in between workspaces
 ; label-separator = |
 
-
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-[module/xbacklight]
-type = internal/xbacklight
-
-format = <label> <bar>
-label = BL
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
@@ -204,12 +241,12 @@ interval = 5
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp4s0
 interval = 10
 
 format-connected = <label-connected>
 ; format-connected = <ramp-signal> <label-connected>
-; format-connected-underline = ${colors.primary}
+format-connected-underline = ${colors.primary}
 label-connected = %essid%
 format-connected-offset = -10
 
@@ -238,7 +275,7 @@ label = %date%%time%
 ; format-prefix = 
 ; format-prefix-foreground = ${colors.foreground-alt}
 ; format-underline = #0a6cf5
-format-underline = ${colors.primary}
+format-underline = ${colors.drac-grn}
 
 [module/pulseaudio]
 type = internal/pulseaudio
