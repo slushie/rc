@@ -1,5 +1,5 @@
 XKBLAYOUT="us"
 XKBVARIANT=""
 BACKSPACE="guess"
-XKBOPTIONS="altwin:swap_alt_win,ctrl:nocaps"
+XKBOPTIONS="ctrl:nocaps"
 XKBMODEL="pc105"
