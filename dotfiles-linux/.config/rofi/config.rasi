@@ -1,6 +1,4 @@
 configuration {
-    dpi: 1;
-
     // wait for enter after running terminal command
     run-shell-command: "{terminal} -e bash -c '{cmd};echo -n [done];read'";
 

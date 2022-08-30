@@ -56,8 +56,8 @@ bindsym $mod+n exec --no-startup-id ~/.config/rofi/nmcli_rofi
 
 bindsym --release $mod+Shift+x exec exec xkill
 
-bindsym $mod+l exec xfce4-session-logout
-bindsym $mod+Ctrl+l exec qdbus --system org.freedesktop.login1 /org/freedesktop/login1/session/self org.freedesktop.login1.Session.Lock
+bindsym $mod+l exec rofi -show p -modi p:~/.config/rofi/rofi-power-menu
+bindsym $mod+Ctrl+l exec rofi -show p -modi "p:$HOME/.config/rofi/rofi-power-menu --choose=lockscreen --confirm=lockscreen"
 
 # change focus
 bindsym $mod+Left focus left
@@ -178,6 +178,19 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+mode "swap" {
+        # change focus
+        bindsym Left focus left
+        bindsym Down focus down
+        bindsym Up focus up
+        bindsym Right focus right
+
+        bindsym Return swap container with mark Swap, unmark Swap, mode "default"
+        bindsym Escape unmark Swap, mode "default"
+}
+
+bindsym $mod+Tab mark Swap, mode "swap"
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -282,7 +295,8 @@ no_focus [class="plasmashell" window_type="notification"]
 
 #exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
-#exec --no-startup-id nm-applet
+exec_always --no-startup-id picom &
+exec_always --no-startup-id ~/.config/i3/setbg.sh
 
 
 
