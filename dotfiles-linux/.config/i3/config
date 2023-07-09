@@ -145,6 +145,7 @@ bindsym $mod+0 workspace $ws10
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
 bindsym $mod+grave workspace back_and_forth
+bindsym $mod+dead_grave workspace back_and_forth
 
 bindsym $mod+Mod1+Left move workspace to output left
 bindsym $mod+Mod1+Right move workspace to output right
@@ -297,7 +298,7 @@ no_focus [class="plasmashell" window_type="notification"]
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
 exec_always --no-startup-id picom &
 exec_always --no-startup-id ~/.config/i3/setbg.sh
-
+exec_always --no-stardup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
 
 
 
