@@ -1,0 +1,11 @@
+regolith.look.path:     /usr/share/regolith-look/dracula
+
+! gnome.terminal.font:        BlexMono Nerd Font 11
+gnome.terminal.font:        JetBrainsMono Nerd Font 11
+gtk.font_name:              Urbanist 11
+gtk.document_font_name:	    IBM Plex Sans 12
+gtk.monospace_font_name:	JetBrainsMono Nerd Font 12
+i3-wm.bar.font:	            Urbanist 13
+i3xrocks.value.font:	    JetBrainsMono Nerd Font 11
+
+gnome.terminal.background-transparency-percent: 10
