@@ -1,0 +1,35 @@
+#!/bin/bash
+# adopt an existing file into a stow package
+#
+# 2023-07-09 this is probably broken
+
+if [[ "$#" -lt 2 ]]; then
+    echo "Usage:"
+    echo "    $0 <pkg> <file>"
+    exit 1
+fi
+
+function real_path () {
+    perl -MCwd=realpath -E '$_=realpath shift;-e && say' "$@"
+}
+
+pkg="$1"
+file="$(real_path "$2")"
+target="$3"
+
+if [[ -z "$target" ]]; then
+    if [[ "$pkg" == dotfiles* ]]; then
+        target="$HOME"
+    else
+        target="/"
+    fi
+fi
+
+set -e
+stow_dir="$(real_path "$(dirname "$(real_path "$0")")/../..")"
+target="${target%/}/"
+stowed="$stow_dir/$pkg/${file##$target}"
+
+mkdir -p "$(dirname "$stowed")"
+cp -ia "$file" "$stowed"
+stow -d "$stow_dir" -t "$target" --adopt --no-folding -S "$pkg"

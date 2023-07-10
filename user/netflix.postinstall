@@ -1,0 +1,13 @@
+#!/bin/bash
+
+read -p 'install tools?'
+[[ "$REPLY" == [Nn]* ]] && exit
+
+# install metatron
+curl -s "https://stash.corp.netflix.com/projects/PS/repos/metatron-cli/raw/scripts/install-script?at=refs%2Fheads%2Fmaster" | bash
+
+# install newt
+curl -q -sL 'https://go.prod.netflix.net/newt-install' | bash
+
+# update newt
+newt version --update

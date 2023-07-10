@@ -15,6 +15,7 @@ Where options are:
     -h          show this help
     -n          perform a dry-run
     -v          debug shell output
+    -y          assume yes, don't draw the menu
 
 And packages are directory names starting with one of:
     user/       for packages which install to \$HOME ($HOME)
@@ -53,12 +54,49 @@ install () {
     return 0
 }
 
-declare dry_run=
+declare -a found_packages=() want_packages=()
+
+draw_menu () {
+    local -a menu_options menu_packages
+    local status title menu_width menu_output=`mktemp`
+    trap "rm -f '$menu_output'" EXIT
+
+    : ${COLUMNS:=80}
+    : ${LINES:=22}
+
+    menu_width=$(( $COLUMNS > 80 ? 80 : $COLUMNS ))
+
+    for pkg in "${found_packages[@]}"; do
+        ( printf '%s\0' "${want_packages[@]}" | grep -Fxzq -- "$pkg" ) \
+            && status="on" || status="off"
+        
+        title="$(cut -d/ -f2 <<< "$pkg")"
+        [[ "$pkg" == system/* ]] \
+            && title="System package '$title' (requires sudo)" \
+            || title="User package '$title'"
+        title="$(printf "%-$(( menu_width - 14 ))s" "$title")"
+
+        menu_options+=( "$pkg" "$title" $status )
+    done
+
+    whiptail --separate-output --title 'Install Packages' --notags \
+        --checklist "Available Packages" $(( $LINES - 5 )) $menu_width $(( $LINES - 10 )) \
+        "${menu_options[@]}" \
+        2>$menu_output >/dev/tty
+    
+    want_packages=( $(cat "$menu_output") )
+}
+
+####
+## Parse script args
+
+declare dry_run= skip_menu=
 if [[ $# -gt 0 ]]; then
-    while getopts "hnv" arg; do
+    while getopts "hnvy" arg; do
         case "$arg" in
             n) log "Dry run mode, commands printed but not run."; dry_run="log" ;;
-            v) set -x ;; 
+            v) set -x ;;
+            y) skip_menu=1 ;; 
             h) usage; exit 0 ;;
             \?) log; usage; exit 1 ;;
         esac
@@ -72,7 +110,7 @@ if ! which stow >/dev/null ; then
     exit 1
 fi
 
-if ! which whiptail >/dev/null ; then
+if [[ -z $skip_menu ]] && ! which whiptail >/dev/null ; then
     if ! which dialog >/dev/null ; then 
         log "ERROR: could not find 'whiptail' or 'dialog' in your PATH"
         exit 1
@@ -80,57 +118,51 @@ if ! which whiptail >/dev/null ; then
     alias whiptail=dialog
 fi
 
-declare -a found_packages want_packages
+####
+## Walk the package tree
+
 while IFS='' read -r -d $'\0'
     do found_packages+=("$REPLY")
-done < <(find user system -mindepth 1 -maxdepth 1 -type d -print0 | sort)
+done < <(find user system -mindepth 1 -maxdepth 1 -type d -print0 | sort -z)
 
-want_packages=( "${found_packages[@]}" )
+want_packages=()
 if [[ "$#" -gt 0 ]]; then
     want_packages=( "$@" )
+
 elif [[ -s packages.txt ]]; then
     want_packages=( $(cat packages.txt) )
+
+else
+    # somewhat sensible defaults:
+    # select all packages that end with our uname, 
+    # and user packages that don't include the "_os" suffix
+    for pkg in "${found_packages[@]}" ; do
+        if [[ $pkg == *$(uname -s | tr A-Z a-z) ]] \
+            || [[ $pkg == user/* && $pkg != *_* ]]
+        then
+            want_packages+=( "$pkg" )
+        fi
+    done
 fi
 
-declare -a menu_options menu_packages
-declare status title index=0 menu_output=`mktemp`
-trap "rm -f '$menu_output'" EXIT
+if [[ -z $skip_menu ]]; then
+    draw_menu
+fi
 
-for pkg in "${found_packages[@]}"; do
-    ( printf '%s\0' "${want_packages[@]}" | grep -Fxzq -- "$pkg" ) \
-        && status="on" || status="off"
-    
-    title="$(cut -d/ -f2 <<< "$pkg")"
-    [[ "$pkg" == system/* ]] \
-        && title="System package '$title' (requires sudo)" \
-        || title="User package '$title'"
-
-    index=$(( $index + 1 ))
-    menu_options+=( "$index." "$title" $status )
-done
-
-: ${COLUMNS:=80}
-: ${LINES:=22}
-whiptail --separate-output --title 'Install Packages' \
-    --checklist "Available Packages" $(( $LINES - 5 )) $(( $COLUMNS - 5 )) $(( $LINES - 10 )) \
-    "${menu_options[@]}" \
-    2>$menu_output >/dev/tty 
-if [[ ! -s "$menu_output" ]]; then
+if ! (( ${#want_packages[@]} )); then
     log "No packages selected, exiting."
     exit 0
 fi
 
-for tag in $(cat "$menu_output"); do
-    index=$(( ${tag%.} - 1 ))
-    menu_packages+=( "${found_packages[$index]}" )
-done
+####
+## Do the thing
 
-log "Installing packages:"
-printf '%s\n' "${menu_packages[@]}" | sort | tee packages.txt | perl -pe 's,^,\t - ,' >&2
-read -p '[press enter to continue]'
+log "Saved package list to packages.txt"
+printf '%s\n' "${want_packages[@]}" | sort | tee packages.txt | perl -pe 's,^,\t - ,' >&2
+read -p '[press enter to install now]'
 
 declare target sudo type
-for dir in "${menu_packages[@]}"; do
+for dir in "${want_packages[@]}"; do
     type="${dir%/*}"
     pkg="${dir#*/}"
     target="$HOME"
