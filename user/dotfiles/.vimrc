@@ -11,20 +11,23 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'vim-scripts/taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
+Bundle 'dracula/vim'
 
-"colors solarized
+" background colors already applied to xterm
+let g:dracula_colorterm=0
+colors dracula
 
 " gui-only stuff in here
 if has("gui_running")
   set guioptions-=T
   "set gfn=Monospace\ 9
   "set gfn=Consolas:h10
-  set gfn=Envy\ Code\ R:h13
+  "set gfn=Envy\ Code\ R:h13
   set lines=40
   set columns=100
   "colors navajo-night
-  set bg=light
-  colors solarized
+  "set bg=light
+  "colors solarized
 else
   set mouse=a
   set background=dark

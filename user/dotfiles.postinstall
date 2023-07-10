@@ -1,6 +1,10 @@
 #!/bin/bash
 
-if [[ ! -e ~/.bash_profile ]] || grep -vq '.bash_profile.stow' ~/.bash_profile ; then
+if ! git config --global --get-all -z include.path | grep -Fxzq -- ".gitconfig.stow"
+    then git config --global --add include.path .gitconfig.stow
+fi
+
+if [[ ! -e ~/.bash_profile ]] || ! grep -vq '.bash_profile.stow' ~/.bash_profile ; then
     echo "Sourcing \`.bash_profile.stow\` from within ~/.bash_profile"
     echo -e "\n# Source local bash_profile"        >> ~/.bash_profile
     echo 'if [[ -r ~/.bash_profile.stow ]]; then'  >> ~/.bash_profile
