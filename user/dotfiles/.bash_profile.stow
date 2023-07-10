@@ -35,11 +35,12 @@ alias k='kubectl'
 alias metacurl='curl -k --cacert ~/.metatron/metatronClient.trust.pem --cert ~/.metatron/user.crt --key ~/.metatron/user.key'
 alias bionicbase='dr -v $HOME/.metatron:/run/metatron -v $HOME/.metatron:/metatron --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/baseos/bionic'
 alias xenialbase='dr --entrypoint /bin/bash dockerregistry.test.netflix.net:7002/engtools/xenialbase'
-alias cdn='cd ~/go/src/stash.corp.netflix.com/engtools/newt'
 
 alias nerd='vim +NERDTree'
 
-alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-e && say'"
+if ! which realpath &>/dev/null ; then
+    alias realpath="perl -MCwd=realpath -E '\$_=realpath shift;-e && say'"
+fi
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -56,7 +57,7 @@ PROMPT_COMMAND="${PROMPT_COMMAND:-:};history -a"
 
 export EDITOR=vim
 
-PATH=$HOME/bin:$HOME/go/bin:$PATH:/usr/local/go/bin
+PATH=$HOME/bin:$HOME/go/bin:$PATH
 
 if [[ $(uname) == "Darwin" ]]; then
     source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
@@ -71,63 +72,9 @@ if [[ $(type -t __git_ps1) != function ]]; then
     }
 fi
 
-# fancy color prompt and window title
-PS1="\[$(tput setaf 1)\]\h\[$(tput setaf 7)\]:\[$(tput bold)\]\[$(tput setaf 7)\]\W\[$(tput sgr0)\]\$(__git_ps1 "[%s]") \u\[$(tput setaf 7)\]\$ \[$(tput sgr0)\]"
-PS1="\[\e]0;[\h] \w\a\]$PS1"
+right="\$(date +'%l:%M%P')"
+left="\[$(tput setaf 4)\]\w\$(__git_ps1 ' \[$(tput bold && tput setaf 5)\]⑂ \[$(tput sgr0 && tput setaf 8)\]%s')"
+prompt="\[$(tput bold && tput setaf $( [[ $EUID -eq 0 ]] && echo 1 || [[ $? -eq 0 ]] && echo 2 || echo 6 ))\]↦\[$(tput sgr0)\] " 
+PS1="\[\e]0;\w\a\]\$(printf '\n\[$(tput setaf 13)\]%*s\[$(tput sgr0)\]\r%s\n%s' \"\$(tput cols)\" \"$right\" \"$left\" \"$prompt\" )"
 
-# screen/tmux specific features
-if [[ -n "$TMUX" || -n "$ASCIINEMA_REC" || -n "$SHORT_PROMPT" ]]; then
-    # simpler prompt, since details are already in the status
-    # also set xterm title to working dir
-    prompt_color=7
-    [[ $EUID == 0 ]] && prompt_color=1
-    PS1="\[$(tput setaf 3)\]\W \[$(tput setaf $prompt_color)\]%\[$(tput sgr0)\] "
-    PS1="\[\e]0;\w\a\]$PS1"
-    [[ -n "$TMUX" ]] && PROMPT_COMMAND="${PROMPT_COMMAND};tmux set-window-option automatic-rename on >/dev/null"
-    unset prompt_color
-fi
-
-#################################################
-## Helper Functions
-#################################################
-
-
-# see https://stackoverflow.com/questions/9376904/find-file-by-name-up-the-directory-tree-using-bash
-dnif () {
-    # Recursively list a file from PWD up the directory tree to root
-    [[ -n "$1" ]] || { echo "Recursively list a file from PWD up the directory tree to root"; echo -e "Usage:\n\tdnif [ls-opts] name"; return 1; }
-    local THERE="$PWD" RC=2
-    local lsopts="$1" target="$2"
-    [[ -z "$target" ]] && { target="$lsopts"; lsopts=""; }
-
-    while [[ $THERE != / ]]
-        do [[ -e "$THERE/$target" ]] && { command ls $lsopts "$THERE/$target"; RC=0; }
-            THERE=$(command dirname "$THERE")
-        done
-    [[ -e "$THERE/$target" ]] && { command ls $lsopts "/$target"; RC=0; }
-    return $RC
-}
-
-cd () {
-    builtin cd "$@" || { return $?; }
-
-    # entering a new gopath
-    if [[ -z "$GOPATH" ]] || [[ "$PWD"/ != "$GOPATH"/* ]]; then
-        gopath_marker=$(dnif .gopath)
-        if [[ -n "$gopath_marker" ]]; then
-            # remove existing GOPATH/bin from PATH
-            [[ -n "$GOPATH" ]] && { PATH="${PATH##$GOPATH/bin:}"; }
-
-            export GOPATH=$(dirname "$gopath_marker")
-            PATH="$GOPATH/bin:$PATH"
-
-            [[ -z $__silent_gopath ]] && echo "[GO] Configured GOPATH=$GOPATH"
-        fi
-    fi
-
-    return $rv
-}
-
-__silent_gopath=1
-cd .
-unset __silent_gopath
+# [[ -n "$TMUX" ]] && PROMPT_COMMAND="${PROMPT_COMMAND};tmux set-window-option automatic-rename on >/dev/null"
