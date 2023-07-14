@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# always name this before includes so that it can be overwritten
+git config --global user.email 'slushie@gmail.com'
+git config --global user.name 'Josh Leder'

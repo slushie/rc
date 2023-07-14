@@ -55,6 +55,7 @@ install () {
 }
 
 declare -a found_packages=() want_packages=()
+declare whiptail=whiptail
 
 draw_menu () {
     local -a menu_options menu_packages
@@ -79,7 +80,7 @@ draw_menu () {
         menu_options+=( "$pkg" "$title" $status )
     done
 
-    whiptail --separate-output --title 'Install Packages' --notags \
+    $whiptail --separate-output --title 'Install Packages' --notags \
         --checklist "Available Packages" $(( $LINES - 5 )) $menu_width $(( $LINES - 10 )) \
         "${menu_options[@]}" \
         2>$menu_output >/dev/tty
@@ -115,7 +116,7 @@ if [[ -z $skip_menu ]] && ! which whiptail >/dev/null ; then
         log "ERROR: could not find 'whiptail' or 'dialog' in your PATH"
         exit 1
     fi
-    alias whiptail=dialog
+    whiptail=dialog
 fi
 
 ####

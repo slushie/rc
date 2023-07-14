@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # use netflix git
-if ! git config --global --get-all -z include.path | grep -Fxzq -- ".gitconfig.netflix"
-    then git config --global --add include.path .gitconfig.netflix
+if ! git config --global --get-regexp include .gitconfig.netflix &>/dev/null
+    then git config --global --add includeIf.gitdir:~/Work/.path .gitconfig.netflix
 fi
 
-read -p 'install tools?'
+read -p 'install tools? (Y/n) '
 [[ "$REPLY" == [Nn]* ]] && exit
 
 # install metatron
