@@ -80,14 +80,14 @@ height = 28
 ;offset-x = 1%
 ; offset-y = 1%
 ; radius = 6.0
-fixed-center = false
+fixed-center = true
 ; bottom = true
 top = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 4
+line-size = 2
 line-color = #E92EFB
 
 ; border-size = 4
@@ -100,14 +100,15 @@ module-margin-left = 1
 module-margin-right = 1
 
 ; font-0 = Iosevka:pixelsize=16;3
-font-0 = JetBrains Mono:pixelsize=12;3
+; font-0 = JetBrains Mono:pixelsize=12;3
+font-0 = IBM Plex Mono:pixelsize=12;3
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = FontAwesome:pixelsize=14;3
 font-2 = "Noto Color Emoji:scale=9;4"
 
 modules-left = menu-button i3
 modules-center = title
-modules-right = spotify xkeyboard pulseaudio filesystem memory cpu temperature battery date
+modules-right = vpn pulseaudio filesystem memory cpu temperature battery date
 
 tray-position = right
 tray-padding = 0
@@ -246,7 +247,7 @@ format = %{A1:x-terminal-emulator -e top -o +%MEM &:}<label>%{A}
 
 [module/vpn]
 type = custom/script
-exec = ~/.config/polybar/vpn.sh \#440BD4 \#e0d0f0 \#FF2079
+exec = ~/.config/polybar/vpn.sh \#ff79c6 \#ffb86c \#50fa7b
 interval = 5
 
 [module/wlan]

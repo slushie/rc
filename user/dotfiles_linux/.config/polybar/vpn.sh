@@ -8,22 +8,23 @@ colorize () {
     var=color_${1}
     color=${!var}
     shift
+    icon="$1"
+    shift
     text="$@"
-    [[ -n "$color" ]] && text="%{F$color}$text%{F-}"
-    echo $text
+    [[ -n "$color" ]] && icon="%{F$color}$icon%{F-}"
+    echo "$icon" $text
 }
 
-nmcli -t -f type,uuid,state con show |
-while IFS=: read type uuid state; do
+while IFS=: read type state name; do
     [[ "$type" == "vpn" ]]  || continue
     [[ -n "$state" ]]       || continue
     case "$state" in
-    "activating")   colorize 2 "" ;;
-    "activated")    colorize 3 "" ;;
+    "activating")   colorize 2 "" "$name" ;;
+    "activated")    colorize 3 "" "$name" ;;
     esac
     exit
-done
+done < <(nmcli -t -f type,state,name con show | sort)
 
-colorize 1 ""
+colorize 1 "" off
 
 

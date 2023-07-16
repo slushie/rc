@@ -13,7 +13,9 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrains Mono Medium 10.5
+# font pango:JetBrains Mono Medium 10.5
+font pango:IBM Plex Mono 12
+
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -246,9 +248,9 @@ for_window [floating] border pixel 10,
 focus_on_window_activation focus
 focus_follows_mouse no
 
-#gaps inner 8
-#gaps outer 4
-#smart_borders on
+gaps inner 8
+gaps outer 4
+smart_borders on
 
 hide_edge_borders both
 
@@ -261,10 +263,10 @@ for_window [class=i3-frame] title_format " %title <i><small>%class</small></i
 
 for_window [class="(?i)Slack"] move to workspace $ws2
 for_window [class="(?i)Firefox" title="^Slack\b"] move to workspace $ws2
-for_window [class="(?i)Firefox" window_type="normal"] move to workspace $ws4
-for_window [class="(?i)Spotify"] move to workspace $ws5
 
-for_window [class="jetbrains-idea"] move to workspace $ws3
+assign [class="(?i)Spotify"] $ws5
+assign [class="(?i)Firefox" window_type="normal"] $ws4
+# assign [class="jetbrains-idea"] move to workspace $ws3
 
 ## Avoid tiling popups, dropdown windows from plasma
 # for the first time, manually resize them, i3 will remember the setting for floating windows
@@ -280,11 +282,11 @@ for_window [class="Plasmoidviewer"] floating enable, border none
 for_window [class="plasmashell"] floating enable
 
 # Don’t spawn an empty window for the Plasma Desktop
-for_window [class="ksplashqml"] kill
-for_window [title="Desktop — Plasma"] kill
+# for_window [class="ksplashqml"] kill
+# for_window [title="Desktop — Plasma"] kill
 
 # Don’t let notifications and non-interactive pop-up windows steal focus
-no_focus [class="plasmashell" window_type="notification"]
+# no_focus [class="plasmashell" window_type="notification"]
 #no_focus [class="plasmashell" window_type="on_screen_display"]
 
 # start the session
@@ -297,8 +299,8 @@ no_focus [class="plasmashell" window_type="notification"]
 #exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
 exec_always --no-startup-id picom &
-exec_always --no-startup-id ~/.config/i3/setbg.sh
-exec_always --no-stardup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
+# exec_always --no-startup-id ~/.config/i3/setbg.sh
+# exec_always --no-stardup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
 
 
 

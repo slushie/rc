@@ -1,6 +1,5 @@
 regolith.look.path:     /usr/share/regolith-look/dracula
 
-! gnome.terminal.font:        BlexMono Nerd Font 11
 gnome.terminal.font:        JetBrainsMono Nerd Font 11
 gtk.font_name:              Urbanist 11
 gtk.document_font_name:	    IBM Plex Sans 12

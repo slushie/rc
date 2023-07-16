@@ -74,7 +74,7 @@ fi
 
 right="\$(date +'%l:%M%P')"
 left="\[$(tput setaf 4)\]\w\$(__git_ps1 ' \[$(tput bold && tput setaf 5)\]⑂ \[$(tput sgr0 && tput setaf 8)\]%s')"
-prompt="\[$(tput bold && tput setaf $( [[ $EUID -eq 0 ]] && echo 1 || [[ $? -eq 0 ]] && echo 2 || echo 6 ))\]↦\[$(tput sgr0)\] " 
+prompt="\[$(tput bold && tput setaf $( [[ $EUID -eq 0 ]] && echo 3 || echo 6 ))\]↦\[$(tput sgr0)\] " 
 PS1="\[\e]0;\w\a\]\$(printf '\n\[$(tput setaf 13)\]%*s\[$(tput sgr0)\]\r%s\n%s' \"\$(tput cols)\" \"$right\" \"$left\" \"$prompt\" )"
 
 # [[ -n "$TMUX" ]] && PROMPT_COMMAND="${PROMPT_COMMAND};tmux set-window-option automatic-rename on >/dev/null"
