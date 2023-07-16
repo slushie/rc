@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Settings file locations
+# Depending on your platform, the user settings file is located here:
+
+# Windows %APPDATA%\Code\User\settings.json
+# macOS $HOME/Library/Application\ Support/Code/User/settings.json
+# Linux $HOME/.config/Code/User/settings.json
+# @see https://code.visualstudio.com/docs/getstarted/settings
+
+case `uname -s` in
+    Darwin) echo "$HOME/Library/Application Support/Code" ;;
+    Linux)  echo "$HOME/.config/Code" ;;
+    *) echo "no such system `uname -s`" >&2 ; exit 1 ;;
+esac

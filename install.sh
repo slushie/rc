@@ -41,6 +41,10 @@ install () {
     local dry_run="${4:-}"
 
     [[ -d "$pkg" ]] || return 1
+    if [[ -x "$pkg.target" ]]; then
+        local tmp="$($dry_run ./$pkg.target "$target")"
+        [[ -n "$tmp" ]] && target="$tmp" || return 2
+    fi
     if [[ -x "$pkg.preinstall" ]]; then
         $dry_run ./$pkg.preinstall "$target" || return 2
     fi

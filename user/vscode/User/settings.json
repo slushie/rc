@@ -1,0 +1,122 @@
+{
+  "workbench.colorTheme": "Dracula",
+  "editor.minimap.enabled": false,
+  "files.insertFinalNewline": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "editor.fontFamily": "\"JetBrains Mono\", monospace",
+  "debug.console.fontSize": 13,
+  "audioCues.onDebugBreak": "on",
+  "editor.dragAndDrop": false,
+  "editor.formatOnPaste": true,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.suggest.preview": true,
+  "workbench.editor.autoLockGroups": {
+    "vscode.markdown.preview.editor": true,
+    "mainThreadWebview-markdown.preview": true
+  },
+  "explorer.compactFolders": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "redhat.telemetry.enabled": true,
+  "cue.toolsPath": "$HOME/go/bin",
+  "yaml.completion": false,
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "[yaml]": {
+    "editor.tabSize": 4,
+    "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+    }
+  },
+  "editor.tabCompletion": "onlySnippets",
+  "editor.inlayHints.fontSize": 10,
+  "editor.fontLigatures": true,
+  "editor.inlayHints.fontFamily": "JetBrainsMono-Italic",
+  "editor.inlayHints.padding": true,
+  "workbench.colorCustomizations": {
+    "[Dracula]": {
+      "editorInlayHint.foreground": "#6272a4",
+      "editorInlayHint.background": "#282a36",
+      "editor.selectionBackground": "#44475aff",
+      // invisible! so that the selection color comes through
+      "editor.selectionHighlightBackground": "#282a3600",
+      "editor.selectionHighlightBorder": "#f8f8f2",
+      "editor.lineHighlightBackground": "#44475a40",
+      "editor.lineHighlightBorder": "#44475a00",
+      "editorCursor.foreground": "#f1fa8c"
+    }
+  },
+  "editor.cursorWidth": 3,
+  "debug.toolBarLocation": "docked",
+  "debug.console.collapseIdenticalLines": false,
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "debug.console.lineHeight": 15,
+  "security.workspace.trust.untrustedFiles": "open",
+  "yaml.format.enable": false,
+  "workbench.startupEditor": "none",
+  "http.proxySupport": "fallback",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "debug.javascript.autoAttachFilter": "disabled",
+  "[javascript,typescript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "docker.languageserver.formatter.ignoreMultilineInstructions": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go",
+    "editor.formatOnSaveMode": "file"
+  },
+  "go.editorContextMenuCommands": {
+    "toggleTestFile": false,
+    "addTags": false,
+    "testFile": true,
+    "generateTestForFile": true,
+    "generateTestForPackage": true,
+    "testCoverage": false,
+    "playground": false
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "go.coverOnSingleTestFile": true,
+  "go.useLanguageServer": true,
+  "gopls": {
+    "formatting.local": "stash.corp.netflix.com",
+    "ui.semanticTokens": false,
+    "ui.completion.usePlaceholders": false
+  },
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.functionTypeParameters": false,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.assignVariableTypes": false,
+  "go.toolsEnvVars": {
+    "CGO_ENABLED": "0",
+    "GOPRIVATE": "stash.corp.netflix.com"
+  },
+  "go.lintTool": "golangci-lint",
+  "go.alternateTools": {
+    "go": "newt-go"
+  },
+  "codestream.serverUrl": "https://api.codestream.com",
+  "codestream.email": "jleder@netflix.com",
+  "git.openRepositoryInParentFolders": "never",
+  "remote.SSH.remotePlatform": {
+    "coder-vscode--jleder--coder": "linux"
+  },
+  "files.associations": {
+    "*.star": "python"
+  },
+  "editor.lineHeight": 1.6,
+  "window.zoomLevel": 1,
+  "workbench.editor.untitled.hint": "hidden",
+  "workbench.editor.languageDetection": false
+}
