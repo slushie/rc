@@ -37,6 +37,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start terminal in the same dir
 #bindsym $mod+Shift+Return exec ~/bin/termhere.sh
 
+# terminal below window
+bindsym $mod+BackSpace split v; exec i3-sensible-terminal
+
+# notifications
+bindsym $mod+Pause exec ilia -p notifications
+
 # disable scroll wheel on titles
 bindsym button4 nop
 bindsym button5 nop
@@ -249,8 +255,8 @@ focus_on_window_activation focus
 focus_follows_mouse no
 
 gaps inner 8
-gaps outer 4
-smart_borders on
+gaps outer 8
+smart_borders no_gaps
 
 hide_edge_borders both
 
@@ -299,6 +305,8 @@ for_window [class="plasmashell"] floating enable
 #exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id ~/.config/polybar/launch.sh & 
 exec_always --no-startup-id picom &
+exec_always --no-startup-id start-stop-daemon -S -b -m --remove-pidfile -p /tmp/rofication.pid -a /usr/bin/rofication-daemon
+
 # exec_always --no-startup-id ~/.config/i3/setbg.sh
 # exec_always --no-stardup-id xmodmap -e 'keycode 135 = Super_R' && xset -r 135
 

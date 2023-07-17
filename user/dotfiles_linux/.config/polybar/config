@@ -106,7 +106,7 @@ font-0 = IBM Plex Mono:pixelsize=12;3
 font-1 = FontAwesome:pixelsize=14;3
 font-2 = "Noto Color Emoji:scale=9;4"
 
-modules-left = menu-button i3
+modules-left = menu-button i3 notify
 modules-center = title
 modules-right = vpn pulseaudio filesystem memory cpu temperature battery date
 
@@ -135,6 +135,26 @@ content-foreground = ${colors.drac-bgd}
 content-background = ${colors.drac-cya}
 click-left = rofi -show drun
 
+[module/notify]
+type = custom/script
+exec = ~/.config/polybar/rofication_status.py \#ff79c6 \#8be9fd \#ff5555
+click-left = ilia -p notifications
+click-middle = ~/.config/polybar/rofication_status.py clear
+interval = 2
+format = <label>
+; format-underline = #1db954
+
+drac-bgd = #282a36
+drac-cur = #44475a
+drac-fgd = #f8f8f2
+drac-cmt = #6272a4
+drac-cya = #8be9fd
+drac-grn = #50fa7b
+drac-ora = #ffb86c
+drac-pnk = #ff79c6
+drac-pur = #bd93f9
+drac-red = #ff5555
+drac-yel = #f1fa8c
 
 [module/spotify]
 type = custom/script
