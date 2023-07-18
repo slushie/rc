@@ -112,36 +112,12 @@ bindsym $mod+Shift+a focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1" 
-# 
-set $ws2 "2" 
-# 
-set $ws3 "3" 
-# 
-set $ws4 "4" 
-# 
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# define the monitors
-set $out0 "eDP-1"
-set $out1 "DP-1"
-set $out2 "DP-2"
-
-# pin workspace to output
-workspace $ws1 output $out1 $out0
-workspace $ws2 output $out2 $out1 $out0
-workspace $ws3 output $out1 $out0
-workspace $ws4 output $out1 $out0
-workspace $ws5 output $out0
-workspace $ws6 output $out1 $out0
-workspace $ws7 output $out1 $out0
-workspace $ws9 output $out0
-workspace $ws10 output $out2 $out1 $out0
+set $ws1 sys
+set $ws2 dbg
+set $ws3 dev
+set $ws4 net
+set $ws5 com
+set $ws6 snd
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -150,10 +126,6 @@ bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 bindsym $mod+Control+Right workspace next
 bindsym $mod+Control+Left workspace prev
@@ -170,20 +142,16 @@ bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # volume control
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10%
 
-# music control
-bindsym XF86AudioPlay exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym XF86AudioPrev exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
-bindsym XF86AudioNext exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
+# # music control
+# bindsym XF86AudioPlay exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+# bindsym XF86AudioPrev exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+# bindsym XF86AudioNext exec dbus-send --type=method_call --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -268,14 +236,15 @@ hide_edge_borders both
 for_window [class="^.*"] border pixel 2
 new_window pixel 2
 new_float pixel 4
+show_marks no
 
-for_window [class=".*"] title_format " %title <i><small>%class</small></i>"
-for_window [class=i3-frame] title_format " %title <i><small>%class</small></i>"
+for_window [class="."] title_window_icon no
+for_window [class="."] title_format " %title <b><small>%class</small></b>"
 
-for_window [class="(?i)Slack"] move to workspace $ws2
-for_window [class="(?i)Firefox" title="^Slack\b"] move to workspace $ws2
+for_window [class="(?i)Slack"] move to workspace $ws5
+for_window [class="(?i)Firefox" title="^Slack\b"] move to workspace $ws5
 
-assign [class="(?i)Spotify"] $ws5
+assign [class="(?i)Spotify"] $ws6
 assign [class="(?i)Firefox" window_type="normal"] $ws4
 # assign [class="jetbrains-idea"] move to workspace $ws3
 

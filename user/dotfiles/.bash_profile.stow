@@ -57,7 +57,7 @@ PROMPT_COMMAND="${PROMPT_COMMAND:-:};history -a"
 
 export EDITOR=vim
 
-PATH=$HOME/bin:$HOME/go/bin:$PATH
+PATH=$HOME/bin:$HOME/.local/bin:$HOME/go/bin:$PATH
 
 if [[ $(uname) == "Darwin" ]]; then
     source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
