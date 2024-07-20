@@ -4,14 +4,16 @@ configuration {
 
     sidebar-mode: true;
     combi-modi: "window,drun";
-    //modi: "combi,run,calc";
-    modi: "combi,run,window";
+    modi: "window,pwr:~/.config/rofi/rofi-power-menu,combi";
 
     display-combi:   "";
     //display-calc:    "";
     display-window:  " ";
     display-drun:    " ";
     display-run:     " ";
+    display-pwr:     "x ";
+
+    pwr { display-name: ""; }
 
 
 /*

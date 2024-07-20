@@ -108,7 +108,7 @@ font-2 = "Noto Color Emoji:scale=9;4"
 
 modules-left = menu-button i3-workspaces notify i3-mode
 modules-center = title
-modules-right = vpn pulseaudio filesystem memory cpu temperature battery date
+modules-right = pulseaudio memory cpu temperature date
 
 tray-position = right
 tray-padding = 0
@@ -133,7 +133,7 @@ content = "  "
 content-padding = 0
 content-foreground = ${colors.drac-bgd}
 content-background = ${colors.drac-cya}
-click-left = rofi -show drun
+click-left = rofi -show combi
 
 [module/notify]
 type = custom/script
@@ -182,15 +182,15 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/xwindow
 
 format = <label>
-format-foreground = ${colors.foreground}
+format-foreground = ${colors.drac-grn}
 format-padding = 4
 
 ; Available tokens:
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 0
-label-underline = ${colors.drac-pur}
+label-maxlen = 60
+; label-underline = ${colors.drac-pur}
 
 ; Used instead of label when there is no window title
 ; Available tokens:

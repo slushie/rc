@@ -14,7 +14,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # font pango:JetBrains Mono Medium 10.5
-font pango:IBM Plex Mono 12
+font pango:IBM Plex Mono 10
 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -56,16 +56,15 @@ bindsym $mod+Shift+q kill
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec rofi -show combi
+#bindsym $mod+d exec rofi -show combi
 
 bindsym $mod+space exec rofi -show combi
-bindsym $mod+Ctrl+space exec ~/.config/rofi/rofimoji.py
-bindsym $mod+n exec --no-startup-id ~/.config/rofi/nmcli_rofi
-
-bindsym --release $mod+Shift+x exec exec xkill
-
-bindsym $mod+l exec rofi -show p -modi p:~/.config/rofi/rofi-power-menu
+bindsym $mod+w exec rofi -show window
+bindsym $mod+n exec ~/.config/rofi/nmcli_rofi
+bindsym $mod+l exec rofi -show pwr
 bindsym $mod+Ctrl+l exec rofi -show p -modi "p:$HOME/.config/rofi/rofi-power-menu --choose=lockscreen --confirm=lockscreen"
+bindsym $mod+Ctrl+space exec ~/.config/rofi/rofimoji.py
+bindsym --release $mod+Shift+x exec exec xkill
 
 # change focus
 bindsym $mod+Left focus left
@@ -222,7 +221,8 @@ for_window [window_role="GtkFileChooserDialog"] move position mouse
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-for_window [floating] border pixel 10, 
+for_window [floating] border pixel 4 
+for_window [tiling] border pixel 2 
 
 focus_on_window_activation focus
 focus_follows_mouse no
